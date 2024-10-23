@@ -1,0 +1,180 @@
+@import './vars'
+
+html
+	display: flex
+	justify-content: center
+
+body
+	width: 100%
+	max-width: 500px
+	font-family: $f-global !important
+	font-size: 16px
+	font-weight: 400
+
+	color: $c-text
+
+.section
+	padding-top: 30px
+	padding-bottom: 30px
+	background-color: $c-background900
+
+.container
+	width: 100%
+	margin-top: 0
+	margin-right: auto
+	margin-bottom: 0
+	margin-left: auto
+	padding-top: 0
+	padding-right: 15px
+	padding-bottom: 0
+	padding-left: 15px
+
+.title
+	font-size: 22px
+	font-family: $f-title
+	font-weight: 500
+	color: $c-text-hover
+
+.subtitle
+	font-size: 12px
+	font-weight: 500
+	color: $c-text-disabled
+
+.headline
+	font-weight: 500
+	color: $c-text-hover
+
+.text
+	line-height: 140%
+
+.subtext
+	font-size: 14px
+
+.tabs
+	display: flex
+	gap: 1px
+	margin-bottom: 30px
+
+	&__item
+		flex: 1
+		@include border
+		background-color: $c-background800
+		&:first-child
+			border-radius: 9px 0 0 9px
+		&:last-child
+			border-radius: 0 9px 9px 0
+		&.active
+			color: $c-text-hover
+			background-color: $c-background700
+			@include border-active
+
+		.tab
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 100%
+			height: 100%
+			min-height: 44px
+			padding-top: 13px
+			padding-right: 18px
+			padding-bottom: 13px
+			padding-left: 18px
+			text-align: center
+
+.button
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	max-width: 375px
+	min-height: 44px
+	height: 100%
+	padding-top: 13px
+	padding-right: 18px
+	padding-bottom: 13px
+	padding-left: 18px
+	color: $c-text
+	background: linear-gradient(to bottom, #2A486F, #1C304A)
+	@include border
+	@include border-radius
+
+.link
+	display: flex
+	align-items: center
+	justify-content: center
+	min-width: 60px
+	max-width: 375px
+	padding-top: 6px
+	padding-right: 10px
+	padding-bottom: 6px
+	padding-left: 10px
+	color: $c-text
+	text-align: center
+	background-color: $c-background600
+	@include border-active
+	@include border-radius
+
+/* Modificators */
+.input--reset
+	border: 0
+	padding: 0
+	background-color: transparent
+	cursor: pointer
+
+.textarea--reset
+	border: 0
+	padding: 0
+	background-color: transparent
+	cursor: pointer
+
+.button--reset
+	border: 0
+	padding: 0
+	background-color: transparent
+	cursor: pointer
+.button--active
+	background: linear-gradient(to bottom, #386094, #233C5D)
+	color: $c-text-hover
+	@include border-active
+.button--disabled
+	background: #1D2836
+	@include border-disabled
+	color: $c-text-disabled
+	pointer-events: none
+
+.visually--hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	overflow: hidden
+	opacity: 0
+	pointer-events: none
+
+/* Margin */
+.mb--22
+	margin-bottom: 22px
+
+/* Colors */
+.color--green
+	color: $c-green
+.color--yellow
+	color: $c-yellow
+.color--blue
+	color: $c-blue
+
+/* Background Colors */
+.background--600
+	background-color: $c-background600
+.background--orange
+	background-color: $c-orange
+.background--violet
+	background-color: $c-violet
+
+/* Background SVG */
+.background--game
+	background-image: url('/src/assets/svg/game.svg')
+.background--star
+	background-image: url('/src/assets/svg/star.svg')
+.background--referrals
+	background-image: url('/src/assets/svg/referrals.svg')

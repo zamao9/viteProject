@@ -1,0 +1,47 @@
+@import '/src/vars'
+
+.registration-item
+	@include border
+	@include border-radius
+	background-color: $c-background800
+
+	.registration-card
+		display: grid
+		gap: 22px
+		padding-top: 10px
+		padding-right: 14px
+		padding-bottom: 10px
+		padding-left: 14px
+
+		&__header
+			display: flex
+			align-items: center
+			gap: 14px
+
+		&__image
+			flex: 0 0 82px
+			height: 82px
+			@include border
+			@include border-radius
+			background-color: $c-background700
+			overflow: hidden
+
+		&__data
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			gap: 10px
+
+		&__footer
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			align-items: center
+			gap: 14px
+
+		&__footer-item
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			gap: 6px
+			&:last-child
+				align-items: flex-end
