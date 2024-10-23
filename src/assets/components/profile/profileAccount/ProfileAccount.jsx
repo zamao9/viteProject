@@ -1,12 +1,16 @@
 import './profileAccount.sass';
+import AccountImage from '/src/assets/image/profile/avatar3.webp';
+import Changer from '/src/assets/svg/changer.svg';
 
-const accountAccount = () => {
+const accountAccount = ({ setPopup }) => {
 	return (
 		<div className='account'>
 			{/* Account Image */}
 			<div className='account__image'>
-				<div className='changer'></div>
-				<img src='/src/assets/image/avatar.webp' alt='account image' />
+				<div className='changer' onClick={() => setPopup(true)}>
+					<img src={Changer} alt='changer svg' />
+				</div>
+				<img src={AccountImage} alt='account image' />
 			</div>
 
 			{/* Account Name */}
@@ -20,7 +24,7 @@ const accountAccount = () => {
 				<li className='account__stats-item'>
 					<div className='account__stat background--600'>
 						<span className='account__stats-svg background--game'>Played</span>
-						<span>0</span>
+						<span>100k</span>
 					</div>
 				</li>
 
@@ -28,7 +32,7 @@ const accountAccount = () => {
 				<li className='account__stats-item'>
 					<div className='account__stat background--orange'>
 						<span className='account__stats-svg background--star'>Winrate</span>
-						<span>0%</span>
+						<span>100%</span>
 					</div>
 				</li>
 
@@ -36,33 +40,13 @@ const accountAccount = () => {
 				<li className='account__stats-item'>
 					<div className='account__stat background--violet'>
 						<span className='account__stats-svg background--referrals'>Referrals</span>
-						<span>0</span>
+						<span>100</span>
 					</div>
 				</li>
 			</ul>
 
 			{/* Account Line */}
 			<hr className='account__line' />
-
-			{/* Account About */}
-			<div className='account__about-wrapper'>
-				<div className='account__about-header'>
-					<div className='account__about-headline'>
-						<span>About me</span>
-					</div>
-					{/* Account Button */}
-					<div className='account__button'>
-						<button className='button account__button button--disabled'>Save</button>
-					</div>
-				</div>
-				{/* Account Textarea */}
-				<textarea
-					name='account-about'
-					id=''
-					className='text account__about-textarea textarea--reset'
-					placeholder='...'
-				></textarea>
-			</div>
 		</div>
 	);
 };

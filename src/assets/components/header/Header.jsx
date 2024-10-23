@@ -1,13 +1,15 @@
-import { useState } from 'react';
 import './header.sass';
+import AccountImage from '/src/assets/image/profile/avatar3.webp';
+import Logo from '/src/assets/svg/logo.svg';
+import Plus from '/src/assets/svg/plus.svg';
 
-const Header = ({ setProfile, curHeaderItem, setHeaderItem }) => {
+const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 	return (
 		<header className='section header'>
 			<div className='container header__container'>
 				{/* Header Logo */}
 				<div className='header__logo'>
-					<img src='/src/assets/svg/logo.svg' alt='header logo image' />
+					<img src={Logo} alt='Logo' />
 				</div>
 
 				{/* Header List*/}
@@ -15,15 +17,7 @@ const Header = ({ setProfile, curHeaderItem, setHeaderItem }) => {
 					{/* Header Item */}
 					<li className='header__item header-balance'>
 						<div className='header__icon plus-icon'>
-							<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-								<path
-									d='M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-								/>
-								<path d='M8.25 12H15.75' strokeLinecap='round' strokeLinejoin='round' />
-								<path d='M12 8.25V15.75' strokeLinecap='round' strokeLinejoin='round' />
-							</svg>
+							<img src={Plus} alt='plus svg' />
 						</div>
 						{/* Header Balance List */}
 						<ul className='header-balance__list'>
@@ -37,8 +31,11 @@ const Header = ({ setProfile, curHeaderItem, setHeaderItem }) => {
 
 					{/* Header Item */}
 					<li
-						className={`header__item ${curHeaderItem === 'item1' ? 'active' : null}`}
-						onClick={() => setHeaderItem('item1')}
+						className={`header__item ${curHeaderItem === 'not-done' ? 'active' : null}`}
+						onClick={() => {
+							setHeaderItem('not-done');
+							setHeaderPage('not-done');
+						}}
 					>
 						<div className='header__icon'>
 							<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -58,12 +55,12 @@ const Header = ({ setProfile, curHeaderItem, setHeaderItem }) => {
 					<li
 						className={`header__item ${curHeaderItem === 'item2' ? 'active' : null}`}
 						onClick={() => {
-							setProfile('profile');
+							setHeaderPage('profile');
 							setHeaderItem('item2');
 						}}
 					>
 						<div className='header__profile'>
-							<img src='/src/assets/image/avatar.webp' alt='header profile avatar image' />
+							<img src={AccountImage} alt='header profile avatar image' />
 						</div>
 						<a href='#' className='header__link'></a>
 					</li>

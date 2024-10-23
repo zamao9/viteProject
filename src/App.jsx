@@ -6,28 +6,37 @@ import Games from './assets/components/games/Games';
 import { useState } from 'react';
 import Registration from './assets/components/registration/Registration';
 import GameAccounts from './assets/components/gameAccounts/GameAccounts';
+import Deleted from './assets/components/deleted/Deleted';
+import NotDone from './assets/components/notDone/NotDone';
+import Popup from './assets/components/popup/Popup';
 
 function App() {
-	const [curGames, setGames] = useState(null);
-	const [curProfile, setProfile] = useState(null);
+	const [curPage, setPage] = useState(null);
 	const [curItemActive, setItemActive] = useState(null);
+	const [curPopup, setPopup] = useState(false);
 
 	return (
 		<>
-			<Header setProfile={setProfile} curHeaderItem={curItemActive} setHeaderItem={setItemActive} />
+			{curPopup === true && <Popup setPopup={setPopup} />}
+
+			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} />
 			<main className='section main'>
 				<div className='container main__container'>
 					{/* Profile */}
-					{curProfile === 'profile' && <Profile />}
+					{curPage === 'profile' && <Profile setPopup={setPopup} />}
 					{/* Games */}
-					{curGames === 'games' && <Games />}
+					{curPage === 'game-accounts' && <GameAccounts />}
 					{/* Registration */}
-					{/* <Registration /> */}
-					{/* GameAccounts */}
-					<GameAccounts />
+					{curPage === 'registration' && <Registration />}
+					{/* Not Done */}
+					{curPage === 'not-done' && <NotDone />}
+					{/* GamesSearch */}
+					{/* <Games /> */}
+					{/* Deleted */}
+					{/* <Deleted /> */}
 				</div>
 			</main>
-			<Footer setGames={setGames} curFooterItem={curItemActive} setFooterItem={setItemActive} />
+			<Footer setFooterPage={setPage} curFooterItem={curItemActive} setFooterItem={setItemActive} />
 		</>
 	);
 }

@@ -1,4 +1,6 @@
 import './games.sass';
+import GameCardImage1 from '/src/assets/image/cards/image1.webp';
+import GameCardImage2 from '/src/assets/image/cards/image1.webp';
 
 const Games = () => {
 	return (
@@ -27,7 +29,7 @@ const Games = () => {
 					<li className='games__item'>
 						<div className='games__card'>
 							<div className='games__image'>
-								<img src='/src/assets/image/cards/image1.webp' alt='games card image' />
+								<img src={GameCardImage1} alt='games card image' />
 							</div>
 							<span className='text games__card-text'>Name of the game trolololololo</span>
 
@@ -66,7 +68,7 @@ const Games = () => {
 					<li className='games__item active'>
 						<div className='games__card'>
 							<div className='games__image'>
-								<img src='/src/assets/image/cards/image1.webp' alt='games card image' />
+								<img src={GameCardImage2} alt='games card image' />
 							</div>
 							<span className='text games__card-text'>Name of the game trolololololo</span>
 

@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import './footer.sass';
 
-const Footer = ({ setGames, curFooterItem, setFooterItem }) => {
+const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
 	return (
 		<footer className='section footer'>
 			<div className='container footer__container'>
@@ -9,8 +8,11 @@ const Footer = ({ setGames, curFooterItem, setFooterItem }) => {
 				<ul className='footer__list'>
 					{/* Footer Item */}
 					<li
-						className={`footer__item ${curFooterItem === 'item3' ? 'active' : null}`}
-						onClick={() => setFooterItem('item3')}
+						className={`footer__item ${curFooterItem === 'registration' ? 'active' : null}`}
+						onClick={() => {
+							setFooterItem('registration');
+							setFooterPage('registration');
+						}}
 					>
 						<div className='footer__icon'>
 							<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -22,10 +24,10 @@ const Footer = ({ setGames, curFooterItem, setFooterItem }) => {
 
 					{/* Footer Item */}
 					<li
-						className={`footer__item ${curFooterItem === 'item4' ? 'active' : null}`}
+						className={`footer__item ${curFooterItem === 'game-accounts' ? 'active' : null}`}
 						onClick={() => {
-							setGames('games');
-							setFooterItem('item4');
+							setFooterPage('game-accounts');
+							setFooterItem('game-accounts');
 						}}
 					>
 						<div className='footer__icon'>
@@ -50,8 +52,11 @@ const Footer = ({ setGames, curFooterItem, setFooterItem }) => {
 
 					{/* Footer Item */}
 					<li
-						className={`footer__item ${curFooterItem === 'item5' ? 'active' : null}`}
-						onClick={() => setFooterItem('item5')}
+						className={`footer__item ${curFooterItem === 'not-done' ? 'active' : null}`}
+						onClick={() => {
+							setFooterItem('not-done');
+							setFooterPage('not-done');
+						}}
 					>
 						<div className='footer__icon'>
 							<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -85,8 +90,11 @@ const Footer = ({ setGames, curFooterItem, setFooterItem }) => {
 
 					{/* Footer Item */}
 					<li
-						className={`footer__item ${curFooterItem === 'item6' ? 'active' : null}`}
-						onClick={() => setFooterItem('item6')}
+						className={`footer__item ${curFooterItem === 'not-done' ? 'active' : null}`}
+						onClick={() => {
+							setFooterItem('not-done');
+							setFooterPage('not-done');
+						}}
 					>
 						<div className='footer__icon'>
 							<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>

@@ -4,7 +4,7 @@ import ProfileAccount from './profileAccount/ProfileAccount';
 import ProfileAchievements from './profileAchievements/ProfileAchievements';
 import ProfileReferrals from './profileReferrals/ProfileReferrals';
 
-const Profile = () => {
+const Profile = ({ setPopup }) => {
 	const [curProfilePage, setProfilePage] = useState('account');
 	const [curTabsItem, setTabsItem] = useState('account');
 
@@ -54,7 +54,7 @@ const Profile = () => {
 				</ul>
 
 				{/* Profile Account/ Referrals/ Achievements */}
-				{curProfilePage === 'account' && <ProfileAccount />}
+				{curProfilePage === 'account' && <ProfileAccount setPopup={setPopup} />}
 				{curProfilePage === 'referrals' && <ProfileReferrals />}
 				{curProfilePage === 'achievements' && <ProfileAchievements />}
 			</div>

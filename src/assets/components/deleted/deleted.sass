@@ -1,0 +1,39 @@
+@import '/src/vars'
+
+/* About */
+.about
+	&__header
+		display: flex
+		gap: 1px
+		width: 100%
+		margin-bottom: 1px
+
+	&__headline
+		width: 100%
+		min-height: 44px
+		padding-top: 13px
+		padding-right: 18px
+		padding-bottom: 13px
+		padding-left: 18px
+		background-color: $c-background800
+		@include border
+		border-radius: 9px 0 0 0
+
+	&__button
+		width: 100px
+		border-radius: 0 9px 0 0
+
+	/* Profile Textarea */
+	&__textarea
+		width: 100%
+		min-height: 150px
+		padding-top: 12px
+		padding-right: 18px
+		padding-bottom: 12px
+		padding-left: 18px
+		color: $c-text
+		@include border
+		border-radius: 0 0 9px 9px
+		resize: none
+		&:focus
+			outline: none
