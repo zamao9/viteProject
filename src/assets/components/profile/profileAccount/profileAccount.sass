@@ -30,6 +30,8 @@
 			@include border-active
 			@include border-radius6
 			background-color: $c-text-disabled
+			transition: 0.2s ease
+			cursor: pointer
 			img
 				width: 20px
 				height: 20px
@@ -52,10 +54,11 @@
 		grid-template-columns: repeat(2, 1fr)
 		gap: 15px
 		margin-bottom: 22px
-		word-break: normal
+		word-break: break-all
 
 	&__stat
 		display: flex
+		flex-direction: column
 		flex-wrap: wrap
 		align-items: center
 		justify-content: center
@@ -70,7 +73,7 @@
 		@include border-radius
 
 	&__stats-svg
-		padding-left: 32px
+		padding-left: 28px
 		background-position: left center
 		background-repeat: no-repeat
 		background-size: 22px 22px
@@ -83,3 +86,8 @@
 		margin-left: 0
 		border: 0
 		@include border-bottom
+
+@media (any-hover:hover)
+	.account
+		.changer:hover
+			opacity: 0.5

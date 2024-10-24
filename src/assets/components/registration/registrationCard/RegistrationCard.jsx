@@ -10,10 +10,15 @@ const RegistrationCard = ({ players, price, title, img }) => {
 					<div className='registration-card__image'>
 						<img src={img} alt='registration card image' />
 					</div>
-					{/* Registration Card Name/Time */}
-					<div className='registration-card__data'>
-						<span className='sybtext'>{title}</span>
-						<span className='title'>16:12:20:32s</span>
+					{/* Registration Card Name/Time/Link */}
+					<div className='registration-card__data-wrapper'>
+						<div className='registration-card__data'>
+							<span className='sybtext'>{title}</span>
+							<span className='title'>16:12:20:32s</span>
+						</div>
+						<a href='#' className='link registration-card__link'>
+							Join
+						</a>
 					</div>
 				</div>
 
@@ -24,10 +29,15 @@ const RegistrationCard = ({ players, price, title, img }) => {
 						<span className='subtext'>Price</span>
 						<span className='title color--green'>{price} TON</span>
 					</div>
-					{/* Registration Quantity */}
+					{/* Registration Players */}
 					<div className='registration-card__footer-item'>
 						<span className='subtext'>Players</span>
 						<span className='title color--blue'>{players}</span>
+					</div>
+					{/* Registration Something */}
+					<div className='registration-card__footer-item'>
+						<span className='subtext'>Something</span>
+						<span className='title'>{players}</span>
 					</div>
 				</div>
 			</div>

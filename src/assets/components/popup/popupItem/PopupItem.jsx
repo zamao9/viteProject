@@ -1,6 +1,6 @@
-const PopupItem = ({ avatarImage, setPopup }) => {
+const PopupItem = ({ avatarImage }) => {
 	return (
-		<li className='popup__item' onClick={() => setPopup(false)}>
+		<li className='popup__item'>
 			<img src={avatarImage} alt='avatar image' />
 		</li>
 	);

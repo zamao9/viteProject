@@ -2,6 +2,7 @@
 
 .header
 	position: fixed
+	z-index: 2
 	top: 0
 	right: 0
 	left: 0
@@ -17,6 +18,8 @@
 	&__logo
 		width: 30px
 		height: 30px
+		cursor: pointer
+		transition: 0.2s ease
 
 	&__list
 		display: flex
@@ -28,6 +31,7 @@
 		margin-left: 15px
 		margin-right: 15px
 		@include border-radius
+		transition: 0.2s ease
 		&:first-child
 			&::before
 				content: none
@@ -103,3 +107,14 @@
 		right: 0
 		bottom: 0
 		left: 0
+
+@media (any-hover:hover)
+	.header
+		&__logo:hover
+			opacity: 0.5
+
+		&__item:not(:first-child):hover
+			background-color: $c-background600
+			.header__icon
+				svg
+					stroke: $c-text-hover

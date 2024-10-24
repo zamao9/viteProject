@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './profile.sass';
 import ProfileAccount from './profileAccount/ProfileAccount';
-import ProfileAchievements from './profileAchievements/ProfileAchievements';
 import ProfileReferrals from './profileReferrals/ProfileReferrals';
+import ProfileAchievements from './profileAchievements/ProfileAchievements';
 
 const Profile = ({ setPopup }) => {
 	const [curProfilePage, setProfilePage] = useState('account');

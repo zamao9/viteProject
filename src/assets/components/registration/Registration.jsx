@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import RegistrationAll from './registrationAll/RegistrationAll';
+import NotDone from '../notDone/NotDone';
 
 const Registration = () => {
 	const [curRegistrationPage, setRegistrationPage] = useState('all');
-	const [curRegistrationItem, setRegistrationItem] = useState('item1');
+	const [curRegistrationItem, setRegistrationItem] = useState('all');
 
 	return (
 		<section className='section registration'>
@@ -14,8 +15,10 @@ const Registration = () => {
 				<ul className='tabs'>
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${curRegistrationItem === 'item1' ? 'active' : null}`}
-						onClick={() => setRegistrationItem('item1')}
+						className={`tabs__item ${curRegistrationItem === 'all' ? 'active' : null}`}
+						onClick={() => {
+							setRegistrationItem('all'), setRegistrationPage('all');
+						}}
 					>
 						<div className='tab'>
 							<span>All</span>
@@ -24,8 +27,10 @@ const Registration = () => {
 
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${curRegistrationItem === 'item2' ? 'active' : null}`}
-						onClick={() => setRegistrationItem('item2')}
+						className={`tabs__item ${curRegistrationItem === 'not-done' ? 'active' : null}`}
+						onClick={() => {
+							setRegistrationItem('not-done'), setRegistrationPage('not-done');
+						}}
 					>
 						<div className='tab'>
 							<span>My games</span>
@@ -34,8 +39,10 @@ const Registration = () => {
 
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${curRegistrationItem === 'item3' ? 'active' : null}`}
-						onClick={() => setRegistrationItem('item3')}
+						className={`tabs__item ${curRegistrationItem === 'not-done' ? 'active' : null}`}
+						onClick={() => {
+							setRegistrationItem('not-done'), setRegistrationPage('not-done');
+						}}
 					>
 						<div className='tab'>
 							<span>Registered</span>
@@ -45,8 +52,9 @@ const Registration = () => {
 
 				{/* Registration All/My Games/Registered */}
 				{curRegistrationPage === 'all' && <RegistrationAll />}
-				{/* {curRegistrationPage === 'mygames' && <RegistrationMyGames />}
+				{/* {curRegistrationPage === 'my-games' && <RegistrationMyGames />}
 				{curRegistrationPage === 'registered' && <RegistrationRegistered />} */}
+				{curRegistrationPage === 'not-done' && <NotDone />}
 			</div>
 		</section>
 	);

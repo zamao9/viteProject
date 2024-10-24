@@ -40,7 +40,7 @@ const accountAccount = ({ setPopup }) => {
 				<li className='account__stats-item'>
 					<div className='account__stat background--violet'>
 						<span className='account__stats-svg background--referrals'>Referrals</span>
-						<span>100</span>
+						<span>100k</span>
 					</div>
 				</li>
 			</ul>

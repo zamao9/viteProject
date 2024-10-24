@@ -2,6 +2,7 @@
 
 .footer
 	position: fixed
+	z-index: 2
 	bottom: 0
 	left: 0
 	right: 0
@@ -18,6 +19,7 @@
 		position: relative
 		@include border-radius
 		overflow: hidden
+		transition: 0.2s ease
 		&.active
 			.footer__icon
 				background-color: $c-background600
@@ -40,3 +42,11 @@
 		right: 0
 		bottom: 0
 		left: 0
+
+@media (any-hover:hover)
+	.footer
+		&__item:hover
+			background-color: $c-background600
+			.footer__icon
+				svg
+					stroke: $c-text-hover
