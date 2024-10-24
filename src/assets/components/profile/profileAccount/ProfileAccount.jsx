@@ -1,8 +1,8 @@
 import './profileAccount.sass';
-import AccountImage from '/src/assets/image/profile/avatar3.webp';
+
 import Changer from '/src/assets/svg/changer.svg';
 
-const accountAccount = ({ setPopup }) => {
+const accountAccount = ({ setPopup, AccountImage }) => {
 	return (
 		<div className='account'>
 			{/* Account Image */}

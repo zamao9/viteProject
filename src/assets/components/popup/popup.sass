@@ -13,6 +13,7 @@
 	background-color: rgba(9, 14, 20, 0.5)
 	backdrop-filter: blur(3px)
 	-webkit-backdrop-filter: blur(3px)
+
 	&__container
 		position: relative
 		padding-top: 77px
@@ -56,7 +57,15 @@
 		@include border
 		@include border-radius
 		cursor: pointer
-		transition: background-color 0.2s ease, transform 0.2s ease
+		transition: background-color 0.2s ease, transform 0.2s ease, filter 0.2s ease
+
+		&.selected
+			background-color: #d1d5db 
+			border: 2px solid #4b5563 
+			transform: scale(1.05) 
+
+		&:not(.selected)
+			opacity: 0.8 
 
 @media (any-hover:hover)
 	.popup

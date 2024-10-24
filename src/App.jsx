@@ -9,21 +9,24 @@ import GameAccounts from './assets/components/gameAccounts/GameAccounts';
 import Deleted from './assets/components/deleted/Deleted';
 import NotDone from './assets/components/notDone/NotDone';
 import Popup from './assets/components/popup/Popup';
+import AccountImage from '/src/assets/image/profile/avatar3.webp';
+
 
 function App() {
 	const [curPage, setPage] = useState(null);
 	const [curItemActive, setItemActive] = useState(null);
 	const [curPopup, setPopup] = useState(false);
+	const [profileImg, setProfileImg] = useState(AccountImage);
 
 	return (
 		<>
-			{curPopup === true && <Popup setPopup={setPopup} />}
+			{curPopup === true && <Popup setPopup={setPopup} setProfileImg={setProfileImg} />}
 
-			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} />
+			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} AccountImage={profileImg} />
 			<main className='section main'>
 				<div className='container main__container'>
 					{/* Profile */}
-					{curPage === 'profile' && <Profile setPopup={setPopup} />}
+					{curPage === 'profile' && <Profile setPopup={setPopup} AccountImage={profileImg} />}
 					{/* Games */}
 					{curPage === 'game-accounts' && <GameAccounts />}
 					{/* Registration */}
