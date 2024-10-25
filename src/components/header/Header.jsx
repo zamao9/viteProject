@@ -2,7 +2,7 @@ import './header.sass';
 
 import Logo from '/src/assets/svg/logo.svg';
 import { PlusIcon } from '/src/constants/svgImages';
-import { NotificationIcon } from '../../../constants/svgImages';
+import { NotificationIcon } from '/src/constants/svgImages';
 
 const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) => {
 	const headerItems = [

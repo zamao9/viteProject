@@ -4,7 +4,7 @@ import Avatar2 from '/src/assets/image/profile/avatar2.webp';
 import Avatar3 from '/src/assets/image/profile/avatar3.webp';
 import Avatar4 from '/src/assets/image/profile/avatar4.webp';
 import PopupItem from './popupItem/PopupItem';
-import { CloseIcon } from '../../../constants/svgImages';
+import { CloseIcon } from '/src/constants/svgImages';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 

@@ -1,19 +1,20 @@
 import './App.sass';
-import Header from './assets/components/header/Header';
-import Footer from './assets/components/footer/Footer';
-import Profile from './assets/components/profile/Profile';
-import Games from './assets/components/games/Games';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import Profile from './components/profile/Profile';
+import Games from './components/games/Games';
 import { useState } from 'react';
-import Registration from './assets/components/registration/Registration';
-import GameAccounts from './assets/components/gameAccounts/GameAccounts';
-import Deleted from './assets/components/deleted/Deleted';
-import NotDone from './assets/components/notDone/NotDone';
-import Popup from './assets/components/popup/Popup';
+import Registration from './components/registration/Registration';
+import GameAccounts from './components/gameAccounts/GameAccounts';
+import Deleted from './components/deleted/Deleted';
+import NotDone from './components/notDone/NotDone';
+import Popup from './components/popup/Popup';
 import AccountImage from '/src/assets/image/profile/avatar3.webp';
+import Tasks from './components/tasks/Tasks';
 
 function App() {
-	const [curPage, setPage] = useState(null);
-	const [curItemActive, setItemActive] = useState(null);
+	const [curPage, setPage] = useState('registration');
+	const [curItemActive, setItemActive] = useState('registration');
 	const [curPopup, setPopup] = useState(false);
 	const [profileImg, setProfileImg] = useState(AccountImage);
 
@@ -36,6 +37,8 @@ function App() {
 					{curPage === 'registration' && <Registration />}
 					{/* Not Done */}
 					{curPage === 'not-done' && <NotDone />}
+					{/* Tasks */}
+					{curPage === 'tasks' && <Tasks />}
 					{/* GamesSearch */}
 					{/* <Games /> */}
 					{/* Deleted */}

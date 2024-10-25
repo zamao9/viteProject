@@ -1,9 +1,9 @@
 import './gameAccounts.sass';
 import GameAccountsItem from './gameAccountsItem/GameAccountsItem';
-import Image1 from '../../image/cards/image1.webp';
-import Image2 from '../../image/cards/image2.webp';
-import Image3 from '../../image/cards/image3.webp';
-import Image4 from '../../image/cards/image5.webp';
+import Image1 from '/src/assets/image/cards/image1.webp';
+import Image2 from '/src/assets/image/cards/image2.webp';
+import Image3 from '/src/assets/image/cards/image3.webp';
+import Image4 from '/src/assets/image/cards/image5.webp';
 
 const GameAccounts = () => {
 	const games = [

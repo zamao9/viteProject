@@ -1,11 +1,11 @@
 import './footer.sass';
-import { RegistrationIcon, GameAccountsIcon, NotDoneIcon, AnotherNotDoneIcon } from '/src/constants/svgImages';
+import { RegistrationIcon, GameAccountsIcon, NotDoneIcon, TasksIcon } from '/src/constants/svgImages';
 
 const footerItems = [
 	{ id: 'registration', icon: <RegistrationIcon />, key: 'Registration' },
 	{ id: 'game-accounts', icon: <GameAccountsIcon />, key: 'Game Accounts' },
-	{ id: 'not-done', icon: <NotDoneIcon />, key: 'Not Done' },
-	{ id: 'not-done', icon: <AnotherNotDoneIcon />, key: 'Another Not Done' },
+	{ id: 'tasks', icon: <TasksIcon />, key: 'Tasks' },
+	{ id: 'not-done', icon: <NotDoneIcon />, key: 'Another Not Done' },
 ];
 
 const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
