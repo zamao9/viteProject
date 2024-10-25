@@ -1,7 +1,7 @@
 // src/constants/svgImages.js
 import React from 'react';
 
-export const PlusIcon = () => (
+export const NotificationIcon = () => (
 	<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 		<path d='M8.99062 21H14.9906' strokeLinecap='round' strokeLinejoin='round' />
 		<path
@@ -12,14 +12,37 @@ export const PlusIcon = () => (
 	</svg>
 );
 
-export const CloseIcon = () => (<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-	<path d='M18.75 5.25L5.25 18.75' strokeLinecap='round' strokeLinejoin='round' />
-	<path d='M18.75 18.75L5.25 5.25' strokeLinecap='round' strokeLinejoin='round' />
-</svg>);
+export const PlusIcon = () => (
+	<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<path
+			d='M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z'
+			stroke='#BEC4CB'
+			strokeLinecap='round'
+			strokeLinejoin='round'
+		/>
+		<path d='M8.25 12H15.75' strokeLinecap='round' strokeLinejoin='round' />
+		<path d='M12 8.25V15.75' strokeLinecap='round' strokeLinejoin='round' />
+	</svg>
+);
+
+export const CloseIcon = () => (
+	<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<path d='M18.75 5.25L5.25 18.75' strokeLinecap='round' strokeLinejoin='round' />
+		<path d='M18.75 18.75L5.25 5.25' strokeLinecap='round' strokeLinejoin='round' />
+	</svg>
+);
 
 export const RegistrationIcon = () => (
 	<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-		<path d='M2.97136 11.5102C4.43524 12.362 6.51403 12.5724 8.50116 10.8547C10.2681 12.8184 13.297 12.8184 15.0639 10.8547C19.1025 14.3457 23.3936 9.98194 22.3839 8.23645L19.6074 3H3.95775L1.18118 8.23645C0.60421 9.06768 1.46009 10.6308 2.97136 11.5102ZM2.97136 11.5102V20H9.18873V14.2832H14.0413V20H20.6154V11.5102' />
+		<path d='M3.75 20.25V4.5' strokeLinecap='round' strokeLinejoin='round' />
+		<path
+			d='M3.75 15.75C9.75 11.25 14.25 20.25 20.25 15.75V4.5C14.25 9 9.75 -3.66569e-06 3.75 4.5'
+			strokeLinecap='round'
+			strokeLinejoin='round'
+		/>
+		<path d='M20.25 9.94688C14.25 14.4469 9.75 5.44688 3.75 9.94688' strokeLinecap='round' strokeLinejoin='round' />
+		<path d='M9.375 3.50626V14.7563' strokeLinecap='round' strokeLinejoin='round' />
+		<path d='M14.625 5.49374V16.7437' strokeLinecap='round' strokeLinejoin='round' />
 	</svg>
 );
 
@@ -72,27 +95,11 @@ export const NotDoneIcon = () => (
 export const AnotherNotDoneIcon = () => (
 	<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
 		<path
-			d='M9 11.25C13.1421 11.25 16.5 9.73896 16.5 7.875C16.5 6.01104 13.1421 4.5 9 4.5C4.85786 4.5 1.5 6.01104 1.5 7.875C1.5 9.73896 4.85786 11.25 9 11.25Z'
+			d='M12.375 20.25H4.47188C4.37673 20.2513 4.28229 20.2334 4.19414 20.1976C4.10599 20.1618 4.02591 20.1087 3.95863 20.0414C3.89134 19.9741 3.83821 19.894 3.80238 19.8059C3.76655 19.7177 3.74874 19.6233 3.75 19.5281V11.625C3.75 9.33751 4.6587 7.14371 6.27621 5.5262C7.89371 3.9087 10.0875 3 12.375 3C13.5077 3 14.6292 3.22309 15.6756 3.65654C16.7221 4.08999 17.6729 4.7253 18.4738 5.5262C19.2747 6.32711 19.91 7.27792 20.3435 8.32436C20.7769 9.37079 21 10.4923 21 11.625C21 12.7577 20.7769 13.8792 20.3435 14.9256C19.91 15.9721 19.2747 16.9229 18.4738 17.7238C17.6729 18.5247 16.7221 19.16 15.6756 19.5935C14.6292 20.0269 13.5077 20.25 12.375 20.25Z'
 			strokeLinecap='round'
 			strokeLinejoin='round'
 		/>
-		<path
-			d='M1.5 7.875V11.625C1.5 13.4906 4.85625 15 9 15C13.1438 15 16.5 13.4906 16.5 11.625V7.875'
-			strokeLinecap='round'
-			strokeLinejoin='round'
-		/>
-		<path d='M6 10.9688V14.7188' strokeLinecap='round' strokeLinejoin='round' />
-		<path
-			d='M16.5 9.06561C19.9219 9.38436 22.5 10.7437 22.5 12.375C22.5 14.2406 19.1438 15.75 15 15.75C13.1625 15.75 11.475 15.45 10.1719 14.9625'
-			strokeLinecap='round'
-			strokeLinejoin='round'
-		/>
-		<path
-			d='M7.5 14.9344V16.125C7.5 17.9906 10.8562 19.5 15 19.5C19.1438 19.5 22.5 17.9906 22.5 16.125V12.375'
-			strokeLinecap='round'
-			strokeLinejoin='round'
-		/>
-		<path d='M18 15.4688V19.2188' strokeLinecap='round' strokeLinejoin='round' />
-		<path d='M12 10.9688V19.2188' strokeLinecap='round' strokeLinejoin='round' />
+		<path d='M9.375 10.5H15' strokeLinecap='round' strokeLinejoin='round' />
+		<path d='M9.375 13.5H15' strokeLinecap='round' strokeLinejoin='round' />
 	</svg>
 );

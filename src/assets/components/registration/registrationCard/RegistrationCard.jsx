@@ -16,9 +16,7 @@ const RegistrationCard = ({ players, price, title, img }) => {
 							<span className='sybtext'>{title}</span>
 							<span className='title'>16:12:20:32s</span>
 						</div>
-						<a href='#' className='link registration-card__link'>
-							Join
-						</a>
+						<button className='small-button registration-card__button'>Join</button>
 					</div>
 				</div>
 

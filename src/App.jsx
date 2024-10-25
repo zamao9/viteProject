@@ -11,7 +11,6 @@ import NotDone from './assets/components/notDone/NotDone';
 import Popup from './assets/components/popup/Popup';
 import AccountImage from '/src/assets/image/profile/avatar3.webp';
 
-
 function App() {
 	const [curPage, setPage] = useState(null);
 	const [curItemActive, setItemActive] = useState(null);
@@ -21,8 +20,12 @@ function App() {
 	return (
 		<>
 			{curPopup === true && <Popup setPopup={setPopup} setProfileImg={setProfileImg} />}
-
-			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} AccountImage={profileImg} />
+			<Header
+				setHeaderPage={setPage}
+				curHeaderItem={curItemActive}
+				setHeaderItem={setItemActive}
+				AccountImage={profileImg}
+			/>
 			<main className='section main'>
 				<div className='container main__container'>
 					{/* Profile */}

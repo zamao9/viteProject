@@ -100,18 +100,20 @@ body
 	padding-left: 18px
 	margin-right: auto
 	margin-left: auto
+	font-weight: 500
 	color: $c-text
-	background: linear-gradient(to bottom, #2A486F, #1C304A)
+	background: linear-gradient(to bottom, #295EA3, #132439)
 	@include border
 	@include border-radius
 	cursor: pointer
 	transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease
 
-.link
+.small-button
 	display: flex
 	align-items: center
 	justify-content: center
-	min-width: 60px
+	flex-shrink: 0
+	min-width: 70px
 	max-width: 375px
 	min-height: 30px
 	padding-top: 6px
@@ -120,10 +122,12 @@ body
 	padding-left: 10px
 	color: $c-text
 	text-align: center
-	background-color: $c-blue
-	@include border-active
+	font-weight: 500
+	background: linear-gradient(to bottom, #295EA3, #1A304C)
+	@include border
 	@include border-radius
 	transition: 0.2s ease
+	cursor: pointer
 
 /* Modificators */
 .input--reset
@@ -144,7 +148,7 @@ body
 	background-color: transparent
 	cursor: pointer
 .button--disabled
-	background: #1D2836
+	background: $c-background-disabled
 	@include border-disabled
 	color: $c-text-disabled
 	pointer-events: none
@@ -193,10 +197,12 @@ body
 			color: $c-text-hover
 			@include border-active
 
-	.link:hover
-		opacity: 0.5
+	.small-button:hover
+		background: linear-gradient(to bottom, #3376CC, #1A304C)
+		color: $c-text-hover
+		@include border-active
 
 	.button:hover
-		background: linear-gradient(to bottom, #386094, #233C5D)
+		background: linear-gradient(to bottom, #3376CC, #1A304C)
 		color: $c-text-hover
 		@include border-active

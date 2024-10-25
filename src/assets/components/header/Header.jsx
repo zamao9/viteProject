@@ -2,28 +2,21 @@ import './header.sass';
 
 import Logo from '/src/assets/svg/logo.svg';
 import { PlusIcon } from '/src/constants/svgImages';
+import { NotificationIcon } from '../../../constants/svgImages';
 
 const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) => {
 	const headerItems = [
 		{
-			key: 'not-donePlus',
-			icon: <PlusIcon />,
-			action: () => {
-				setHeaderItem('not-donePlus');
-				setHeaderPage('not-donePlus');
-			},
+			key: 'not-done',
+			icon: <NotificationIcon />,
 		},
 		{
-			key: 'item2',
+			key: 'profile',
 			icon: (
 				<div className='header__profile'>
 					<img src={AccountImage} alt='header profile avatar image' />
 				</div>
 			),
-			action: () => {
-				setHeaderPage('profile');
-				setHeaderItem('item2');
-			},
 		},
 	];
 
@@ -51,11 +44,14 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 					</li>
 
 					{/* Header Items */}
-					{headerItems.map(({ key, icon, action }) => (
+					{headerItems.map(({ key, icon }) => (
 						<li
 							key={key}
 							className={`header__item ${curHeaderItem === key ? 'active' : ''}`}
-							onClick={action}
+							onClick={() => {
+								setHeaderPage(key);
+								setHeaderItem(key);
+							}}
 						>
 							<div className='header__icon'>{icon}</div>
 							<a href='#' className='header__link'></a>

@@ -45,14 +45,12 @@
 
 	&__list
 		display: grid
-		grid-template-columns: repeat(4, 70px)
+		grid-template-columns: repeat(4, 1fr)
 		justify-content: center
 		gap: 10px
 		margin-bottom: 77px
 
 	&__item
-		width: 70px
-		height: 70px
 		background-color: $c-background700
 		@include border
 		@include border-radius
@@ -60,12 +58,9 @@
 		transition: background-color 0.2s ease, transform 0.2s ease, filter 0.2s ease
 
 		&.selected
-			background-color: #d1d5db 
-			border: 2px solid #4b5563 
-			transform: scale(1.05) 
-
-		&:not(.selected)
-			opacity: 0.8 
+			background-color: $c-background600
+			@include border-active
+			transform: scale(1.08)
 
 @media (any-hover:hover)
 	.popup

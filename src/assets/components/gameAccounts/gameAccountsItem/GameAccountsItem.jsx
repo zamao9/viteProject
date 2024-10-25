@@ -15,9 +15,7 @@ const GameAccountsItem = ({ title, img }) => {
 				</div>
 
 				{/* Game Account Link */}
-				<a href='#' className='link game-account__link'>
-					Link
-				</a>
+				<button className='small-button'>Link</button>
 			</div>
 		</li>
 	);

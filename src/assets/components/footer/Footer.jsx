@@ -2,10 +2,10 @@ import './footer.sass';
 import { RegistrationIcon, GameAccountsIcon, NotDoneIcon, AnotherNotDoneIcon } from '/src/constants/svgImages';
 
 const footerItems = [
-	{ id: 'registration', icon: <RegistrationIcon />, label: 'Registration' },
-	{ id: 'game-accounts', icon: <GameAccountsIcon />, label: 'Game Accounts' },
-	{ id: 'not-done', icon: <NotDoneIcon />, label: 'Not Done' },
-	{ id: 'another-not-done', icon: <AnotherNotDoneIcon />, label: 'Another Not Done' },
+	{ id: 'registration', icon: <RegistrationIcon />, key: 'Registration' },
+	{ id: 'game-accounts', icon: <GameAccountsIcon />, key: 'Game Accounts' },
+	{ id: 'not-done', icon: <NotDoneIcon />, key: 'Not Done' },
+	{ id: 'not-done', icon: <AnotherNotDoneIcon />, key: 'Another Not Done' },
 ];
 
 const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
@@ -16,16 +16,14 @@ const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
 				<ul className='footer__list'>
 					{footerItems.map((item) => (
 						<li
-							key={item.id}
+							key={item.key}
 							className={`footer__item ${curFooterItem === item.id ? 'active' : ''}`}
 							onClick={() => {
 								setFooterItem(item.id);
 								setFooterPage(item.id);
 							}}
 						>
-							<div className='footer__icon'>
-								{item.icon}
-							</div>
+							<div className='footer__icon'>{item.icon}</div>
 							<a href='#' className='footer__link'></a>
 						</li>
 					))}

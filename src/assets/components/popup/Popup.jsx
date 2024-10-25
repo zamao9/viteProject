@@ -19,18 +19,18 @@ const Popup = ({ setPopup, setProfileImg }) => {
 	const [selectedAvatar, setSelectedAvatar] = useState(null);
 
 	const variants = {
-		hidden: { opacity: 0, y: 50 },  // Начальное состояние (скрыто)
-		visible: { opacity: 1, y: 0 },   // Конечное состояние (видимо)
+		hidden: { opacity: 0 }, // Начальное состояние (скрыто)
+		visible: { opacity: 1 }, // Конечное состояние (видимо)
 	};
 
 	return (
 		<motion.section
 			className='section popup'
-			initial='hidden'         // Начальное состояние
-			animate='visible'        // Конечное состояние
-			exit='hidden'            // Состояние при выходе
+			initial='hidden' // Начальное состояние
+			animate='visible' // Конечное состояние
+			exit='hidden' // Состояние при выходе
 			variants={variants}
-			transition={{ duration: 0.3 }} // Время анимации
+			transition={{ duration: 0.2 }} // Время анимации
 		>
 			<div className='container popup__container'>
 				<div className='popup__close' onClick={() => setPopup(false)}>
