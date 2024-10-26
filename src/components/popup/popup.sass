@@ -18,7 +18,7 @@
 		position: relative
 		padding-top: 77px
 		padding-bottom: 77px
-		background-color: $c-background800
+		background-color: $c-bg800
 		@include border
 		@include border-radius
 
@@ -37,7 +37,7 @@
 		svg
 			width: 24px
 			height: 24px
-			stroke: $c-text
+			fill: $c-text
 
 	&__title
 		text-align: center
@@ -51,24 +51,23 @@
 		margin-bottom: 77px
 
 	&__item
-		background-color: $c-background700
+		background-color: $c-bg900
 		@include border
 		@include border-radius
 		cursor: pointer
 		transition: background-color 0.2s ease, transform 0.2s ease, filter 0.2s ease
 
 		&.selected
-			background-color: $c-background600
-			@include border-active
+			background-color: $c-bg700
 			transform: scale(1.08)
 
 @media (any-hover:hover)
 	.popup
 		&__close:hover
-			background-color: $c-background600
+			background-color: $c-bg700
 			svg
-				stroke: $c-text-hover
+				fill: $c-text-hover
 
 		&__item:hover
 			transform: scale(1.08)
-			background-color: $c-background600
+			background-color: $c-bg700

@@ -19,7 +19,7 @@ body
 	padding-bottom: 30px
 	margin-right: auto
 	margin-left: auto
-	background-color: $c-background900
+	background-color: $c-bg900
 
 .container
 	width: 100%
@@ -34,34 +34,40 @@ body
 
 .title
 	font-size: 22px
+	line-height: 22px
 	font-family: $f-title
-	font-weight: 500
 	color: $c-text-hover
 
 .subtitle
-	font-size: 12px
-	font-weight: 500
-	color: $c-text-disabled
-
-.headline
-	font-weight: 500
+	font-size: 18px
+	line-height: 18px
+	font-family: $f-title
 	color: $c-text-hover
 
+.headline
+	color: $c-text-disabled
+	font-family: $f-title
+	font-size: 12px
+	line-height: 12px
+
 .text
-	line-height: 160%
+	font-size: 14px
+	line-height: 140%
 
 .subtext
 	font-size: 14px
 
 .tabs
 	display: flex
+	justify-content: center
 	gap: 1px
 	margin-bottom: 30px
+	font-size: 13px
 
 	&__item
-		flex: 1
+		flex: 0 1 33%
 		@include border
-		background-color: $c-background800
+		background-color: $c-bg800
 		cursor: pointer
 		transition: 0.2s ease
 		&:first-child
@@ -70,8 +76,7 @@ body
 			border-radius: 0 9px 9px 0
 		&.active
 			color: $c-text-hover
-			background-color: $c-background700
-			@include border-active
+			background-color: $c-bg700
 
 		.tab
 			display: flex
@@ -100,11 +105,11 @@ body
 	padding-left: 18px
 	margin-right: auto
 	margin-left: auto
-	font-weight: 500
 	color: $c-text
-	background: linear-gradient(to bottom, #295EA3, #132439)
-	@include border
-	@include border-radius
+	font-family: $f-title
+	line-height: 16px
+	background: linear-gradient(to bottom, #66B200, #407000)
+	@include border-radius6
 	cursor: pointer
 	transition: 0.2s ease
 
@@ -121,11 +126,10 @@ body
 	padding-bottom: 6px
 	padding-left: 10px
 	color: $c-text
-	text-align: center
-	font-weight: 500
-	background: linear-gradient(to bottom, #295EA3, #1A304C)
-	@include border
-	@include border-radius
+	font-family: $f-title
+	line-height: 16px
+	background: linear-gradient(to bottom, #66B200, #407000)
+	@include border-radius6
 	transition: 0.2s ease
 	cursor: pointer
 
@@ -148,8 +152,7 @@ body
 	background-color: transparent
 	cursor: pointer
 .button--disabled
-	background: $c-background-disabled
-	@include border-disabled
+	background: #3A6600
 	color: $c-text-disabled
 	pointer-events: none
 
@@ -174,14 +177,6 @@ body
 .color--blue
 	color: $c-blue
 
-/* Background Colors */
-.background--600
-	background-color: $c-background600
-.background--orange
-	background-color: $c-orange
-.background--violet
-	background-color: $c-violet
-
 /* Background SVG */
 .background--game
 	background-image: url('/src/assets/svg/game.svg')
@@ -193,16 +188,13 @@ body
 @media (any-hover:hover)
 	.tabs
 		&__item:hover
-			background-color: $c-background700
+			background-color: $c-bg700
 			color: $c-text-hover
-			@include border-active
 
 	.small-button:hover
-		background: linear-gradient(to bottom, #3376CC, #1A304C)
+		background: linear-gradient(to bottom, #83E500, #5DA300)
 		color: $c-text-hover
-		@include border-active
 
 	.button:hover
-		background: linear-gradient(to bottom, #3376CC, #1A304C)
+		background: linear-gradient(to bottom, #83E500, #5DA300)
 		color: $c-text-hover
-		@include border-active

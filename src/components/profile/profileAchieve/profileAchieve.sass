@@ -10,12 +10,13 @@
 		padding-right: 16px
 		padding-bottom: 12px
 		padding-left: 16px
-		background-color: $c-background800
+		background-color: $c-bg800
 		@include border
 		@include border-radius
 		&.active
-			background-color: $c-background600
-			@include border-active
+			background-color: $c-bg700
+			.achievement__svg
+				fill: $c-text-hover
 			.achievement__progress
 				color: $c-text-hover
 
@@ -33,6 +34,6 @@
 
 	&__progress
 		flex-shrink: 0
-		width: 45px
+		width: 55px
 		font-weight: 500
 		text-align: right

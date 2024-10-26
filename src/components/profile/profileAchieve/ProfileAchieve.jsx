@@ -11,14 +11,14 @@ const ProfileAchieve = ({ svg, headline, description, progress }) => {
 				</div>
 				<div className='achievement__content'>
 					{/* Achievement Headline */}
-					<span className='headline'>{headline}</span>
+					<span className='subtitle'>{headline}</span>
 					{/* Achievement Description */}
 					<span className='text achievement__text'>{description}</span>
 				</div>
 
 				{/* Achievement Progress */}
 				<div className='achievement__progress'>
-					<span>{progress}%</span>
+					<span className='subtitle'>{progress}%</span>
 				</div>
 			</div>
 		</li>

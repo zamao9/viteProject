@@ -7,7 +7,7 @@
 		position: relative
 		width: 150px
 		height: 150px
-		background-color: $c-background800
+		background-color: $c-bg800
 		@include border
 		@include border-radius
 		margin-top: 0
@@ -27,9 +27,8 @@
 			justify-content: center
 			width: 30px
 			height: 30px
-			@include border-active
+			background: linear-gradient(to bottom, #66B200, #407000)
 			@include border-radius6
-			background-color: $c-text-disabled
 			transition: 0.2s ease
 			cursor: pointer
 			img
@@ -71,6 +70,8 @@
 		text-transform: uppercase
 		line-height: 22px
 		@include border-radius
+		@include border
+		background-color: $c-bg800
 
 	&__stats-svg
 		padding-left: 28px
@@ -78,16 +79,7 @@
 		background-repeat: no-repeat
 		background-size: 22px 22px
 
-	/* Profile Line */
-	&__line
-		margin-top: 0
-		margin-right: 0
-		margin-bottom: 22px
-		margin-left: 0
-		border: 0
-		@include border-bottom
-
 @media (any-hover:hover)
 	.account
 		.changer:hover
-			opacity: 0.5
+			background: linear-gradient(to bottom, #83E500, #5DA300)

@@ -14,39 +14,36 @@ const accountAccount = ({ setPopup, AccountImage }) => {
 			</div>
 
 			{/* Account Name */}
-			<span className='title account__name'>
-				Jaga Jugu Jigi Jaga <span className='subtitle account__name-subtitle'>#153658965</span>
+			<span className='account__name'>
+				Jaga Jugu Jigi Jaga <span className='headline account__name-subtitle'>#153658965</span>
 			</span>
 
 			{/* Account Stats */}
 			<ul className='account__stats-list'>
 				{/* Stats Item */}
 				<li className='account__stats-item'>
-					<div className='account__stat background--600'>
+					<div className='account__stat'>
 						<span className='account__stats-svg background--game'>Played</span>
-						<span>100k</span>
+						<span className='subtitle'>100k</span>
 					</div>
 				</li>
 
 				{/* Stats Item */}
 				<li className='account__stats-item'>
-					<div className='account__stat background--orange'>
+					<div className='account__stat'>
 						<span className='account__stats-svg background--star'>Winrate</span>
-						<span>100%</span>
+						<span className='subtitle'>100%</span>
 					</div>
 				</li>
 
 				{/* Stats Item */}
 				<li className='account__stats-item'>
-					<div className='account__stat background--violet'>
+					<div className='account__stat'>
 						<span className='account__stats-svg background--referrals'>Referrals</span>
-						<span>100k</span>
+						<span className='subtitle'>100k</span>
 					</div>
 				</li>
 			</ul>
-
-			{/* Account Line */}
-			<hr className='account__line' />
 		</div>
 	);
 };
