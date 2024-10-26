@@ -37,8 +37,8 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 						</div>
 						{/* Header Balance List */}
 						<ul className='header-balance__list'>
-							<li className='subtitle header-balance__item euro-coin color--green'>100</li>
-							<li className='subtitle header-balance__item other-coin color--yellow'>999</li>
+							<li className='subtitle header-balance__item euro-coin color--green'>100 TON</li>
+							<li className='subtitle header-balance__item other-coin color--yellow'>999 AFR$</li>
 						</ul>
 						<a href='#' className='header__link'></a>
 					</li>

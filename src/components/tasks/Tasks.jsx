@@ -1,17 +1,10 @@
 import TaskItem from './taskItem/TaskItem';
-import discord from '/src/assets/image/tasks/discord.webp';
 import telegram from '/src/assets/image/tasks/telegram.webp';
-import x from '/src/assets/image/tasks/x.webp';
+import logo from '/src/assets/image/tasks/logo.webp';
 import './tasks.sass';
 
 const Tasks = () => {
 	const taskData = [
-		{
-			key: 'discord',
-			img: discord,
-			text: `Subscribe on our discord channel.`,
-			price: 60,
-		},
 		{
 			key: 'telegram',
 			img: telegram,
@@ -19,9 +12,9 @@ const Tasks = () => {
 			price: 60,
 		},
 		{
-			key: 'x',
-			img: x,
-			text: 'Subscribe on our x channel.',
+			key: 'sign-up',
+			img: logo,
+			text: `Sign up for a gaming account.`,
 			price: 60,
 		},
 	];

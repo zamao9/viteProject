@@ -27,24 +27,31 @@ function App() {
 				setHeaderItem={setItemActive}
 				AccountImage={profileImg}
 			/>
+
 			<main className='section main'>
 				<div className='container main__container'>
 					{/* Profile */}
 					{curPage === 'profile' && <Profile setPopup={setPopup} AccountImage={profileImg} />}
+
 					{/* Games */}
 					{curPage === 'game-accounts' && <GameAccounts />}
+
 					{/* Registration */}
 					{curPage === 'registration' && <Registration />}
+
 					{/* Not Done */}
 					{curPage === 'not-done' && <NotDone />}
+
 					{/* Tasks */}
 					{curPage === 'tasks' && <Tasks />}
+
 					{/* GamesSearch */}
 					{/* <Games /> */}
 					{/* Deleted */}
 					{/* <Deleted /> */}
 				</div>
 			</main>
+
 			<Footer setFooterPage={setPage} curFooterItem={curItemActive} setFooterItem={setItemActive} />
 		</>
 	);
