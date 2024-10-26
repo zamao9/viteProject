@@ -14,7 +14,7 @@ const RegistrationCard = ({ players, price, title, img }) => {
 					<div className='registration-card__data-wrapper'>
 						<div className='registration-card__data'>
 							<span className='sybtext'>{title}</span>
-							<span className='title'>16:12:20:32s</span>
+							<span className='subtitle'>16:12:20:32s</span>
 						</div>
 						<button className='small-button registration-card__button'>Join</button>
 					</div>
