@@ -24,10 +24,8 @@ const TaskItem = ({ img, text, price }) => {
 						<button
 							className={`small-button ${curButton ? 'button--disabled' : ''}`}
 							onClick={() => {
-								if (setButton) {
-									setButton('button--disabled');
-									setButtonText('Started');
-								}
+								setButton('button--disabled');
+								setButtonText('Started');
 							}}
 						>
 							{curButtonText}

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import RegistrationAll from './registrationAll/RegistrationAll';
 import NotDone from '../notDone/NotDone';
+import RegistrationRegistered from './registrationRegistered/RegistrationRegistered';
 
 const Registration = () => {
 	const [curRegistrationPage, setRegistrationPage] = useState('all');
 	const [curRegistrationItem, setRegistrationItem] = useState('all');
+	const [curButtonAll, setButtonAll] = useState(null);
 
 	return (
 		<section className='section registration'>
@@ -39,9 +41,9 @@ const Registration = () => {
 
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${curRegistrationItem === 'not-done' ? 'active' : null}`}
+						className={`tabs__item ${curRegistrationItem === 'registered' ? 'active' : null}`}
 						onClick={() => {
-							setRegistrationItem('not-done'), setRegistrationPage('not-done');
+							setRegistrationItem('registered'), setRegistrationPage('registered');
 						}}
 					>
 						<div className='tab'>
@@ -51,9 +53,9 @@ const Registration = () => {
 				</ul>
 
 				{/* Registration All/My Games/Registered */}
-				{curRegistrationPage === 'all' && <RegistrationAll />}
-				{/* {curRegistrationPage === 'my-games' && <RegistrationMyGames />}
-				{curRegistrationPage === 'registered' && <RegistrationRegistered />} */}
+				{curRegistrationPage === 'all' && <RegistrationAll curButton={curButtonAll} setButton={setButtonAll} />}
+				{/* {curRegistrationPage === 'my-games' && <RegistrationMyGames />} */}
+				{curRegistrationPage === 'registered' && <RegistrationRegistered />}
 				{curRegistrationPage === 'not-done' && <NotDone />}
 			</div>
 		</section>

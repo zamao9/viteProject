@@ -1,6 +1,11 @@
 import './registrationCard.sass';
+import { useState } from 'react';
 
 const RegistrationCard = ({ players, price, title, img }) => {
+	let ButtonText = 'Join';
+	const [curButtonText, setButtonText] = useState(ButtonText);
+	const [curButton, setButton] = useState(null);
+
 	return (
 		<li className='registration-item'>
 			<div className='registration-card'>
@@ -16,7 +21,15 @@ const RegistrationCard = ({ players, price, title, img }) => {
 							<span className='sybtext'>{title}</span>
 							<span className='subtitle'>16:12:20:32s</span>
 						</div>
-						<button className='small-button registration-card__button'>Join</button>
+						<button
+							className={`small-button registration-card__button ${curButton ? 'button--disabled' : ''}`}
+							onClick={() => {
+								setButton('button--disabled');
+								setButtonText('Joined');
+							}}
+						>
+							{curButtonText}
+						</button>
 					</div>
 				</div>
 

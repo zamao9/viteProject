@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import './gameAccountsItem.sass';
 
 const GameAccountsItem = ({ title, img }) => {
+	let ButtonText = 'Link';
+	const [curButtonText, setButtonText] = useState(ButtonText);
+	const [curButton, setButton] = useState(null);
+
 	return (
 		<li className='game-accounts-item'>
 			<div className='game-account'>
@@ -15,7 +20,15 @@ const GameAccountsItem = ({ title, img }) => {
 				</div>
 
 				{/* Game Account Link */}
-				<button className='small-button'>Link</button>
+				<button
+					className={`small-button ${curButton ? 'button--disabled' : ''}`}
+					onClick={() => {
+						setButton('button--disabled');
+						setButtonText('Linked');
+					}}
+				>
+					{curButtonText}
+				</button>
 			</div>
 		</li>
 	);
