@@ -15,15 +15,17 @@
 		@include border-radius
 		&.active
 			background-color: $c-bg700
-			.achievement__svg
+			.achievement__svg svg
 				fill: $c-text-hover
 			.achievement__progress
 				color: $c-text-hover
 
 	&__svg
 		flex-shrink: 0
-		width: 32px
-		height: 32px
+		svg
+			width: 32px
+			height: 32px
+			fill: $c-text
 
 	&__content
 		position: relative

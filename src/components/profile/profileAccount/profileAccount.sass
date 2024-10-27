@@ -27,7 +27,7 @@
 			justify-content: center
 			width: 30px
 			height: 30px
-			background: linear-gradient(to bottom, #66B200, #407000)
+			@include button
 			@include border-radius6
 			transition: 0.2s ease
 			cursor: pointer
@@ -74,12 +74,13 @@
 		background-color: $c-bg800
 
 	&__stats-svg
-		padding-left: 28px
+		padding-left: 34px
+		line-height: 30px
 		background-position: left center
 		background-repeat: no-repeat
-		background-size: 22px 22px
+		background-size: 30px 30px
 
 @media (any-hover:hover)
 	.account
 		.changer:hover
-			background: linear-gradient(to bottom, #83E500, #5DA300)
+			@include button-hover

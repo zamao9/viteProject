@@ -18,7 +18,7 @@ const TaskItem = ({ img, text, price }) => {
 				<div className='task__content'>
 					<p className='task__text'>{text}</p>
 					<div className='task__footer'>
-						<span className='title task__price color--yellow'>
+						<span className='subtitle task__price color--yellow'>
 							{price} <span className='subtext'>AFR$</span>
 						</span>
 						<button

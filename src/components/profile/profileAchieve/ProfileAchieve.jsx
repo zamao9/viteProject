@@ -6,9 +6,7 @@ const ProfileAchieve = ({ svg, headline, description, progress }) => {
 			{/* Achievement */}
 			<div className={`achievement__wrapper ${progress === 100 ? 'active' : null}`}>
 				{/* Achievement Svg */}
-				<div className='achievement__svg'>
-					<img src={svg} alt='achievement svg' />
-				</div>
+				<div className='achievement__svg'>{svg}</div>
 				<div className='achievement__content'>
 					{/* Achievement Headline */}
 					<span className='subtitle'>{headline}</span>
