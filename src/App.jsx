@@ -11,6 +11,9 @@ import NotDone from './components/notDone/NotDone';
 import Popup from './components/popup/Popup';
 import AccountImage from '/src/assets/image/profile/avatar3.webp';
 import Tasks from './components/tasks/Tasks';
+import { TonConnectButton } from '@tonconnect/ui-react';
+import Balance from './components/balance/balance';
+
 
 function App() {
 	const [curPage, setPage] = useState('registration');
@@ -30,20 +33,23 @@ function App() {
 
 			<main className='section main'>
 				<div className='container main__container'>
-					{/* Profile */}
+					{/* Profile set in Header component*/}
 					{curPage === 'profile' && <Profile setPopup={setPopup} AccountImage={profileImg} />}
 
-					{/* Games */}
+					{/* Games set in Footer Component */}
 					{curPage === 'game-accounts' && <GameAccounts />}
 
-					{/* Registration */}
+					{/* Registration set in Footer Component */}
 					{curPage === 'registration' && <Registration />}
 
-					{/* Not Done */}
+					{/* Not Done set in Footer Component */}
 					{curPage === 'not-done' && <NotDone />}
 
-					{/* Tasks */}
+					{/* Tasks set in Footer Component  */}
 					{curPage === 'tasks' && <Tasks />}
+
+					{/* Balance set in Header component */}
+					{curPage === 'balance' && <Balance />}
 
 					{/* GamesSearch */}
 					{/* <Games /> */}
