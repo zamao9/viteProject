@@ -32,17 +32,15 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 				<ul className='header__list'>
 					{/* Header Item for Balance */}
 					<li
-						className={`header__item header-balance ${curHeaderItem === "balance" ? 'active' : ''}`}
+						className='header__item header-balance	'
 						onClick={() => {
-							setHeaderPage("balance");
-							setHeaderItem("balance");
+							setHeaderPage('balance');
 						}}
 					>
 						<div className='header__icon plus-icon'>
 							<PlusIcon />
 						</div>
 						<ul className='header-balance__list'>
-							<li className='subtitle header-balance__item euro-coin color--green'>100 TON</li>
 							<li className='subtitle header-balance__item other-coin color--yellow'>999 AFR$</li>
 						</ul>
 						<a href='#' className='header__link'></a>
@@ -63,7 +61,7 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 					))}
 				</ul>
 			</div>
-		</header >
+		</header>
 	);
 };
 

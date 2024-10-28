@@ -2,9 +2,7 @@ import { useState } from 'react';
 import './taskItem.sass';
 
 const TaskItem = ({ img, text, price }) => {
-	let buttonText = 'Start';
 	const [curButton, setButton] = useState(null);
-	const [curButtonText, setButtonText] = useState(buttonText);
 
 	return (
 		<li className='tasks-item'>
@@ -16,7 +14,7 @@ const TaskItem = ({ img, text, price }) => {
 
 				{/* Task Content */}
 				<div className='task__content'>
-					<p className='task__text'>{text}</p>
+					<p className='text task__text'>{text}</p>
 					<div className='task__footer'>
 						<span className='subtitle task__price color--yellow'>
 							{price} <span className='subtext'>AFR$</span>
@@ -25,10 +23,9 @@ const TaskItem = ({ img, text, price }) => {
 							className={`small-button ${curButton ? 'button--disabled' : ''}`}
 							onClick={() => {
 								setButton('button--disabled');
-								setButtonText('Started');
 							}}
 						>
-							{curButtonText}
+							{curButton === 'button--disabled' ? 'Started' : 'Start'}
 						</button>
 					</div>
 				</div>

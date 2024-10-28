@@ -12,8 +12,7 @@ import Popup from './components/popup/Popup';
 import AccountImage from '/src/assets/image/profile/avatar3.webp';
 import Tasks from './components/tasks/Tasks';
 import { TonConnectButton } from '@tonconnect/ui-react';
-import Balance from './components/balance/balance';
-
+import Balance from './components/balance/Balance';
 
 function App() {
 	const [curPage, setPage] = useState('registration');

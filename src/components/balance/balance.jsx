@@ -1,47 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import { useTonConnectUI, useTonWallet, useTonConnectModal } from '@tonconnect/ui-react';
-import { FadeLoader } from 'react-spinners';
-import { MdCheckCircle } from 'react-icons/md';
+import { useTonWallet, useTonConnectModal, useTonConnectUI } from '@tonconnect/ui-react';
+import './balance.sass';
+import BalanceBalance from '../balance/balanceBalance/BalanceBalance';
+import NotDone from '../notDone/NotDone';
 
 const Balance = () => {
-    const wallet = useTonWallet();
-    const [loading, setLoading] = useState(false);
-    const [walletAddress, setWalletAddress] = useState('');
+	const wallet = null;
+	const [tonConnectUI, setOptions] = useTonConnectUI();
+	const [curPage, setPage] = useState('balance');
+	const [curPageItem, setPageItem] = useState('balance');
 
-    useEffect(() => {
-        if (wallet) {
-            setWalletAddress(wallet.account.address);
-        }
-    }, [wallet]);
+	return (
+		<section className='section balance'>
+			<div className='container balance__container'>
+				<div className='balance__connect'>
+					{wallet === null ? (
+						<button className={`button `} onClick={() => tonConnectUI.openModal().tonConnectUI.openModal()}>
+							Connect Wallet
+						</button>
+					) : (
+						<ul className='tabs'>
+							<li
+								className={`tabs__item ${curPageItem === 'balance' ? 'active' : ''}`}
+								onClick={() => {
+									setPage('balance');
+									setPageItem('balance');
+								}}
+							>
+								<div className='tab'>
+									<span>Balance</span>
+								</div>
+							</li>
+							<li
+								className={`tabs__item ${curPageItem === 'not-done' ? 'active' : ''}`}
+								onClick={() => {
+									setPage('not-done');
+									setPageItem('not-done');
+								}}
+							>
+								<div className='tab'>
+									<span>Transaction history</span>
+								</div>
+							</li>
+						</ul>
+					)}
 
-    const [tonConnectUI, setOptions] = useTonConnectUI();
-    const { state, open, close } = useTonConnectModal();
+					{/* Tabs */}
 
-    return (
-        <div className="relative">
-            <div>
-                <div>Modal state: {state?.status}</div>
-                <button onClick={open}>Open modal</button>
-                <button onClick={close}>Close modal</button>
-            </div>
-
-            {walletAddress && (
-                <>
-                    <div>
-                        <span>Connected wallet address: {wallet.account.address}</span>
-                        <span>Device: {wallet.device.appName}</span>
-                        <span>Connected via: {wallet.provider}</span>
-                        {wallet.connectItems?.tonProof?.proof && <span>Ton proof: {wallet.connectItems.tonProof.proof}</span>}
-
-                        <div>Connected wallet info:</div>
-                        <div>
-                            {wallet.name} <img src={wallet.imageUrl} />
-                        </div>
-                    </div>
-                </>
-            )}
-        </div>
-    );
+					{/* Balance Balance */}
+					{curPage === 'balance' && <BalanceBalance /> && wallet !== null && <BalanceBalance />}
+					{curPage === 'not-done' && <NotDone /> && wallet !== null && <NotDone />}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Balance;

@@ -1,14 +1,11 @@
 import './registrationCard.sass';
 import { useState, useEffect } from 'react';
-import { formatTime } from '/src/helpers/Timers'
+import { formatTime } from '/src/helpers/Timers';
 
 const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, minutes = 0, seconds = 0 }) => {
-	let ButtonText = 'Join';
-	const [curButtonText, setButtonText] = useState(ButtonText);
 	const [curButton, setButton] = useState(null);
 
-	const calculateInitialTimeLeft = () =>
-		days * 24 * 3600 + hours * 3600 + minutes * 60 + seconds;
+	const calculateInitialTimeLeft = () => days * 24 * 3600 + hours * 3600 + minutes * 60 + seconds;
 
 	const [timeLeft, setTimeLeft] = useState(calculateInitialTimeLeft());
 
@@ -18,22 +15,18 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 	const remainingMinutes = Math.floor((timeLeft % 3600) / 60);
 	const remainingSeconds = timeLeft % 60;
 
-	console.log(timeLeft)
+	console.log(timeLeft);
 
 	useEffect(() => {
 		// Если время закончилось, не запускаем таймер
 		if (timeLeft <= 0) return;
-
 		// Устанавливаем интервал на каждую секунду
 		const intervalId = setInterval(() => {
 			setTimeLeft((prevTime) => prevTime - 1);
 		}, 1000);
-
 		// Чистим интервал при размонтировании компонента
 		return () => clearInterval(intervalId);
 	}, [timeLeft]);
-
-
 
 	return (
 		<li className='registration-item'>
@@ -48,21 +41,23 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 					<div className='registration-card__data-wrapper'>
 						<div className='registration-card__data'>
 							<span className='sybtext'>{title}</span>
-							<span className='subtitle'>      {formatTime({
-								days: remainingDays,
-								hours: remainingHours,
-								minutes: remainingMinutes,
-								seconds: remainingSeconds
-							})}</span>
+							<span className='subtitle'>
+								{' '}
+								{formatTime({
+									days: remainingDays,
+									hours: remainingHours,
+									minutes: remainingMinutes,
+									seconds: remainingSeconds,
+								})}
+							</span>
 						</div>
 						<button
 							className={`small-button registration-card__button ${curButton ? 'button--disabled' : ''}`}
 							onClick={() => {
 								setButton('button--disabled');
-								setButtonText('Joined');
 							}}
 						>
-							{curButtonText}
+							{curButton === 'button--disabled' ? 'Joined' : 'Join'}
 						</button>
 					</div>
 				</div>

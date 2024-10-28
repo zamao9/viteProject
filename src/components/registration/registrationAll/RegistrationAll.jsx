@@ -2,7 +2,6 @@ import './registrationAll.sass';
 import RegistrationCard from '../registrationCard/RegistrationCard';
 import Image1 from '/src/assets/image/registration/image7.webp';
 
-
 const RegistrationAll = () => {
 	const tournaments = [
 		{
@@ -11,7 +10,10 @@ const RegistrationAll = () => {
 			price: 15,
 			title: 'GameName1',
 			img: Image1,
-			hours: 6,
+			days: 99,
+			hours: 23,
+			minutes: 55,
+			seconds: 55,
 		},
 	];
 
@@ -25,7 +27,10 @@ const RegistrationAll = () => {
 					price={tournament.price}
 					title={tournament.title}
 					img={tournament.img}
+					days={tournament.days}
 					hours={tournament.hours}
+					minutes={tournament.minutes}
+					seconds={tournament.seconds}
 				/>
 			))}
 		</ul>

@@ -1,8 +1,9 @@
+import { formatNumber, formatNumberShort } from '../../../helpers/FormatNumber';
 import './profileAccount.sass';
 
 import Changer from '/src/assets/svg/changer.svg';
 
-const accountAccount = ({ setPopup, AccountImage }) => {
+const accountAccount = ({ setPopup, AccountImage, curReferrals, curPlayed }) => {
 	return (
 		<div className='account'>
 			{/* Account Image */}
@@ -14,7 +15,7 @@ const accountAccount = ({ setPopup, AccountImage }) => {
 			</div>
 
 			{/* Account Name */}
-			<span className='account__name'>
+			<span className='account__name title'>
 				Jaga Jugu Jigi Jaga <span className='headline account__name-subtitle'>#153658965</span>
 			</span>
 
@@ -24,7 +25,7 @@ const accountAccount = ({ setPopup, AccountImage }) => {
 				<li className='account__stats-item'>
 					<div className='account__stat'>
 						<span className='account__stats-svg background--game'>Played</span>
-						<span className='subtitle'>100k</span>
+						<span className='subtitle'>{formatNumberShort(curPlayed)}</span>
 					</div>
 				</li>
 
@@ -40,7 +41,7 @@ const accountAccount = ({ setPopup, AccountImage }) => {
 				<li className='account__stats-item'>
 					<div className='account__stat'>
 						<span className='account__stats-svg background--referrals'>Referrals</span>
-						<span className='subtitle'>100k</span>
+						<span className='subtitle'>{formatNumberShort(curReferrals)}</span>
 					</div>
 				</li>
 			</ul>

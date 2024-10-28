@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './gameAccountsItem.sass';
 
 const GameAccountsItem = ({ title, img }) => {
-	let ButtonText = 'Link';
-	const [curButtonText, setButtonText] = useState(ButtonText);
 	const [curButton, setButton] = useState(null);
 
 	return (
@@ -24,10 +22,9 @@ const GameAccountsItem = ({ title, img }) => {
 					className={`small-button ${curButton ? 'button--disabled' : ''}`}
 					onClick={() => {
 						setButton('button--disabled');
-						setButtonText('Linked');
 					}}
 				>
-					{curButtonText}
+					{curButton === 'button--disabled' ? 'Linked' : 'Link'}
 				</button>
 			</div>
 		</li>

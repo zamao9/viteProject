@@ -13,16 +13,32 @@
 
 @font-face {
 	font-display: swap;
-	font-family: 'Aclonica';
+	font-family: 'Exo';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/src/assets/fonts/AclonicaRegular.woff2') format('woff2');
+	src: url('/src/assets/fonts/ExoRegular.woff2') format('woff2');
 }
 
 @font-face {
 	font-display: swap;
-	font-family: 'Montserrat Alternates';
+	font-family: 'Exo';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/src/assets/fonts/ExoSemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Mulish';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/src/assets/fonts/MontserratAlternatesRegular.woff2') format('woff2');
+	src: url('/src/assets/fonts/MulishRegular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Roboto Mono';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/src/assets/fonts/RobotoMonoMediumItalic.woff2') format('woff2');
 }

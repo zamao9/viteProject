@@ -7,6 +7,8 @@ import ProfileAchievements from './profileAchievements/ProfileAchievements';
 const Profile = ({ setPopup, AccountImage }) => {
 	const [curProfilePage, setProfilePage] = useState('account');
 	const [curTabsItem, setTabsItem] = useState('account');
+	const curReferrals = 123456;
+	const curPlayed = 58732;
 
 	const tabs = [
 		{ key: 'account', label: 'Account' },
@@ -36,7 +38,14 @@ const Profile = ({ setPopup, AccountImage }) => {
 				</ul>
 
 				{/* Profile Account/ Referrals/ Achievements */}
-				{curProfilePage === 'account' && <ProfileAccount setPopup={setPopup} AccountImage={AccountImage} />}
+				{curProfilePage === 'account' && (
+					<ProfileAccount
+						setPopup={setPopup}
+						AccountImage={AccountImage}
+						curReferrals={curReferrals}
+						curPlayed={curPlayed}
+					/>
+				)}
 				{curProfilePage === 'referrals' && <ProfileReferrals />}
 				{curProfilePage === 'achievements' && <ProfileAchievements />}
 			</div>
