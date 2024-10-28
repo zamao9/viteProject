@@ -37,7 +37,7 @@ const Popup = ({ setPopup, setProfileImg }) => {
 					<CloseIcon />
 				</div>
 
-				<h2 className='title popup__title'>Select your avatar</h2>
+				<h2 className='title title--22 popup__title'>Select your avatar</h2>
 
 				<ul className='popup__list'>
 					{avatars.map((avatar) => (

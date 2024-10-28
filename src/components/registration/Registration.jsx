@@ -12,7 +12,7 @@ const Registration = () => {
 		<section className='section registration'>
 			<div className='container registration__container'>
 				{/* Registration Title */}
-				<h2 className='title mb--22 registration__title'>Registration</h2>
+				<h2 className='title title--22 mb--22 registration__title'>Registration</h2>
 				{/* Tabs */}
 				<ul className='tabs'>
 					{/* Tabs Item */}
@@ -41,9 +41,9 @@ const Registration = () => {
 
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${curRegistrationItem === 'registered' ? 'active' : null}`}
+						className={`tabs__item ${curRegistrationItem === 'not-done' ? 'active' : null}`}
 						onClick={() => {
-							setRegistrationItem('registered'), setRegistrationPage('registered');
+							setRegistrationItem('not-done'), setRegistrationPage('not-done');
 						}}
 					>
 						<div className='tab'>
@@ -55,7 +55,7 @@ const Registration = () => {
 				{/* Registration All/My Games/Registered */}
 				{curRegistrationPage === 'all' && <RegistrationAll curButton={curButtonAll} setButton={setButtonAll} />}
 				{/* {curRegistrationPage === 'my-games' && <RegistrationMyGames />} */}
-				{curRegistrationPage === 'registered' && <RegistrationRegistered />}
+				{/* {curRegistrationPage === 'registered' && <RegistrationRegistered />} */}
 				{curRegistrationPage === 'not-done' && <NotDone />}
 			</div>
 		</section>

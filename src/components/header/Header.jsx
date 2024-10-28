@@ -2,7 +2,7 @@ import './header.sass';
 
 import Logo from '/src/assets/svg/logo.svg';
 import { PlusIcon } from '/src/constants/svgImages';
-import { NotificationIcon } from '/src/constants/svgImages';
+import { NotificationIcon, LogoIcon } from '/src/constants/svgImages';
 
 const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) => {
 	const headerItems = [
@@ -25,7 +25,7 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 			<div className='container header__container'>
 				{/* Header Logo */}
 				<div className='header__logo'>
-					<img src={Logo} alt='Logo' />
+					<LogoIcon />
 				</div>
 
 				{/* Header List */}
@@ -40,10 +40,7 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 						<div className='header__icon plus-icon'>
 							<PlusIcon />
 						</div>
-						<ul className='header-balance__list'>
-							<li className='subtitle header-balance__item other-coin color--yellow'>999 AFR$</li>
-						</ul>
-						<a href='#' className='header__link'></a>
+						<span className='title title--14 header-balance__item other-coin color--green'>999 AFR$</span>
 					</li>
 					{/* Header Items */}
 					{headerItems.map(({ key, icon }) => (
@@ -56,7 +53,6 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) =
 							}}
 						>
 							<div className='header__icon'>{icon}</div>
-							<a href='#' className='header__link'></a>
 						</li>
 					))}
 				</ul>

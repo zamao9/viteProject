@@ -4,7 +4,13 @@ export function formatNumber(number) {
 }
 
 export function formatNumberShort(number) {
-	if (number >= 1_000_000) {
+	if (number >= 1_000_000_000_000_000) {
+		return (number / 1_000_000_000_000_000).toFixed(1) + 'q';
+	} else if (number >= 1_000_000_000) {
+		return (number / 1_000_000_000).toFixed(1) + 'B';
+	} else if (number >= 1_000_000_000) {
+		return (number / 1_000_000_000).toFixed(1) + 'B';
+	} else if (number >= 1_000_000) {
 		return (number / 1_000_000).toFixed(1) + 'M';
 	} else if (number >= 1_000) {
 		return (number / 1_000).toFixed(1) + 'K';

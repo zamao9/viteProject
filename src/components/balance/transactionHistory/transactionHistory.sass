@@ -1,0 +1,91 @@
+@import '/src/vars'
+
+.transaction-history
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 450px
+	gap: 22px
+	padding: 8px 5px
+	background-color: $c-bg800
+	@include border
+	@include border-radius
+
+	&__content
+		display: flex
+		flex-direction: column
+		height: 100%
+
+	&__header
+		display: flex
+		gap: 15px
+		align-items: center
+		padding: 10px 18px
+		width: 100%
+		height: 40px
+		margin-bottom: 8px
+		background-color: $c-bg900
+		@include border
+		@include border-radius6
+		span
+			width: 100%
+			text-align: center
+		span:first-child
+			flex: 0 0 75px
+			text-align: left
+		span:last-child
+			text-align: right
+
+	&__list
+		display: flex
+		flex-direction: column
+		gap: 8px
+		height: 100%
+		margin-bottom: 22px
+		padding: 13px 18px
+		background-color: $c-bg900
+		@include border
+		@include border-radius6
+		overflow: hidden
+
+	&__item
+		display: flex
+		align-items: center
+		gap: 15px
+		span
+			width: 100%
+			text-align: center
+		span:first-child
+			flex: 0 0 75px
+			text-align: left
+		span:last-child
+			text-align: right
+
+	&__title
+		color: $c-text
+
+	&__footer
+		display: flex
+		gap: 10px
+		align-items: center
+		justify-content: center
+
+	&__button
+		width: 40px
+		height: 40px
+		min-height: 0
+		padding: 0
+		margin: 0
+		svg
+			fill: $c-text
+
+	&__counter
+		display: flex
+		align-items: center
+		justify-content: center
+		min-width: 80px
+		height: 40px
+		padding: 10px
+		background-color: $c-bg900
+		@include border
+		@include border-radius6

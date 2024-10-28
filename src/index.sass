@@ -33,30 +33,50 @@ body
 	padding-left: 15px
 
 .title
-	font-size: 22px
-	line-height: 22px
 	font-family: $f-title
 	color: $c-text-hover
+	&--22
+		font-size: 22px
+		line-height: 22px
+	&--18
+		font-size: 18px
+		line-height: 18px
+	&--16
+		font-size: 16px
+		line-height: 16px
+	&--14
+		font-size: 14px
+		line-height: 14px
+	&--12
+		font-size: 12px
+		line-height: 12px
 
 .subtitle
-	font-size: 18px
-	font-weight: 600
-	line-height: 18px
+	font-weight: 500
 	font-family: $f-title
 	color: $c-text-hover
+	&--18
+		font-size: 18px
+		line-height: 18px
+	&--16
+		font-size: 16px
+		line-height: 16px
 
 .headline
 	color: $c-text-disabled
 	font-family: $f-headline
 	font-size: 12px
 	line-height: 12px
+	font-weight: 500
 
 .text
-	line-height: 140%
-
-.subtext
-	font-size: 14px
-	line-height: 14px
+	line-height: 16px
+	&--14
+		font-size: 14px
+		line-height: 14px
+	&--12
+		font-size: 12px
+		line-height: 12px
 
 .tabs
 	display: flex
@@ -64,8 +84,6 @@ body
 	gap: 1px
 	width: 100%
 	margin-bottom: 30px
-	font-size: 14px
-	line-height: 14px
 
 	&__item
 		flex: 1
@@ -101,7 +119,6 @@ body
 	width: 100%
 	max-width: 315px
 	min-height: 44px
-	height: 100%
 	padding-top: 13px
 	padding-right: 18px
 	padding-bottom: 13px
@@ -159,6 +176,9 @@ body
 /* Margin */
 .mb--22
 	margin-bottom: 22px
+
+.lh--140
+	line-height: 140%
 
 /* Colors */
 .color--green

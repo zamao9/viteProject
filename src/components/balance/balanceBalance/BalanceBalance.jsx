@@ -5,8 +5,8 @@ const BalanceBalance = () => {
 	return (
 		<form action='' className='balance-balance'>
 			<div className='balance-balance__balance'>
-				<span className='subtitle'>26,231.002</span>
-				<span className='subtitlle balance-balance__subtitle'>AFR$</span>
+				<span className='title title--18'>26,231.002</span>
+				<span className='title title--14 balance-balance__subtitle'>AFR$</span>
 			</div>
 
 			{/* Balance Switch */}
@@ -15,9 +15,9 @@ const BalanceBalance = () => {
 					<span className='headline'>Token</span>
 					<div className='switch__token'>
 						<div className='switch__header'>
-							<span className='subtext switch__subtitle'>AFR$</span>
+							<span className='title title--14 switch__subtitle'>AFR$</span>
 						</div>
-						<input id='ton' type='number' className='subtitle switch__body' placeholder='1' />
+						<input id='ton' type='number' className='title title--16 switch__body' placeholder='1' />
 					</div>
 				</li>
 
@@ -29,9 +29,9 @@ const BalanceBalance = () => {
 					<span className='headline'>Network</span>
 					<div className='switch__token'>
 						<div className='switch__header'>
-							<span className='subtext switch__subtitle'>TON</span>
+							<span className='title title--14 switch__subtitle'>TON</span>
 						</div>
-						<input id='ton' type='number' className='subtitle switch__body' placeholder='0.1' />
+						<input id='ton' type='number' className='title title--16 switch__body' placeholder='0.1' />
 					</div>
 				</li>
 			</ul>

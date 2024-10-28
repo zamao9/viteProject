@@ -14,11 +14,9 @@ const TaskItem = ({ img, text, price }) => {
 
 				{/* Task Content */}
 				<div className='task__content'>
-					<p className='text task__text'>{text}</p>
+					<p className='lh--140 task__text'>{text}</p>
 					<div className='task__footer'>
-						<span className='subtitle task__price color--yellow'>
-							{price} <span className='subtext'>AFR$</span>
-						</span>
+						<span className='subtitle subtitle--18 task__price color--yellow'>{price} AFR$</span>
 						<button
 							className={`small-button ${curButton ? 'button--disabled' : ''}`}
 							onClick={() => {

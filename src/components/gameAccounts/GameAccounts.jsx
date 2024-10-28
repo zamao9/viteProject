@@ -17,7 +17,7 @@ const GameAccounts = () => {
 		<section className='section game-accounts'>
 			<div className='container game-accounts__container'>
 				{/* Game Accounts Title */}
-				<h2 className='title mb--22'>Game accounts</h2>
+				<h2 className='title title--22 mb--22'>Game accounts</h2>
 
 				{/* Game Accounts List */}
 				<ul className='game-accounts__list'>

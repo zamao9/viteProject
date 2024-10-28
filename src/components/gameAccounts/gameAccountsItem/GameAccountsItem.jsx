@@ -14,7 +14,7 @@ const GameAccountsItem = ({ title, img }) => {
 
 				{/* Game Account Name */}
 				<div className='game-account__name'>
-					<span className='subtitle'>{title}</span>
+					<span className='subtitle subtitle--18'>{title}</span>
 				</div>
 
 				{/* Game Account Link */}

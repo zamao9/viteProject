@@ -40,8 +40,8 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 					{/* Registration Card Name/Time/Link */}
 					<div className='registration-card__data-wrapper'>
 						<div className='registration-card__data'>
-							<span className='sybtext'>{title}</span>
-							<span className='subtitle'>
+							<span className='text text--14'>{title}</span>
+							<span className='subtitle subtitle--18'>
 								{' '}
 								{formatTime({
 									days: remainingDays,
@@ -66,18 +66,18 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 				<div className='registration-card__footer'>
 					{/* Registration Price */}
 					<div className='registration-card__footer-item'>
-						<span className='subtext'>Price</span>
-						<span className='subtitle color--green'>{price} TON</span>
+						<span className='text text--14'>Price</span>
+						<span className='subtitle subtitle--18 color--green'>{price} TON</span>
 					</div>
 					{/* Registration Players */}
 					<div className='registration-card__footer-item'>
-						<span className='subtext'>Players</span>
-						<span className='subtitle color--blue'>{players}</span>
+						<span className='text text--14'>Players</span>
+						<span className='subtitle subtitle--18 color--blue'>{players}</span>
 					</div>
 					{/* Registration Something */}
 					<div className='registration-card__footer-item'>
-						<span className='subtext'>Something</span>
-						<span className='subtitle'>{players}</span>
+						<span className='text text--14'>Something</span>
+						<span className='subtitle subtitle--18'>{players}</span>
 					</div>
 				</div>
 			</div>

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useTonWallet, useTonConnectModal, useTonConnectUI } from '@tonconnect/ui-react';
 import './balance.sass';
 import BalanceBalance from '../balance/balanceBalance/BalanceBalance';
-import NotDone from '../notDone/NotDone';
+import TransactionHistory from './transactionHistory/TransactionHistory';
 
 const Balance = () => {
-	const wallet = null;
+	const wallet = 'null';
 	const [tonConnectUI, setOptions] = useTonConnectUI();
 	const [curPage, setPage] = useState('balance');
 	const [curPageItem, setPageItem] = useState('balance');
@@ -13,6 +13,7 @@ const Balance = () => {
 	return (
 		<section className='section balance'>
 			<div className='container balance__container'>
+				<h2 className='title title--22 mb--22'>Balance</h2>
 				<div className='balance__connect'>
 					{wallet === null ? (
 						<button className={`button `} onClick={() => tonConnectUI.openModal().tonConnectUI.openModal()}>
@@ -32,10 +33,10 @@ const Balance = () => {
 								</div>
 							</li>
 							<li
-								className={`tabs__item ${curPageItem === 'not-done' ? 'active' : ''}`}
+								className={`tabs__item ${curPageItem === 'transaction-history' ? 'active' : ''}`}
 								onClick={() => {
-									setPage('not-done');
-									setPageItem('not-done');
+									setPage('transaction-history');
+									setPageItem('transaction-history');
 								}}
 							>
 								<div className='tab'>
@@ -45,11 +46,11 @@ const Balance = () => {
 						</ul>
 					)}
 
-					{/* Tabs */}
-
 					{/* Balance Balance */}
 					{curPage === 'balance' && <BalanceBalance /> && wallet !== null && <BalanceBalance />}
-					{curPage === 'not-done' && <NotDone /> && wallet !== null && <NotDone />}
+
+					{/* Transaction History */}
+					{curPage === 'transaction-history' && <TransactionHistory /> && wallet !== null && <TransactionHistory />}
 				</div>
 			</div>
 		</section>

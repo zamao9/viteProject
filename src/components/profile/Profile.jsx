@@ -19,6 +19,7 @@ const Profile = ({ setPopup, AccountImage }) => {
 	return (
 		<section className='section profile'>
 			<div className='container profile__container'>
+				<h2 className='title title--22 mb--22'>Profile</h2>
 				{/* Tabs */}
 				<ul className='tabs'>
 					{tabs.map(({ key, label }) => (
@@ -31,7 +32,7 @@ const Profile = ({ setPopup, AccountImage }) => {
 							}}
 						>
 							<div className='tab'>
-								<span>{label}</span>
+								<span className='text text--14'>{label}</span>
 							</div>
 						</li>
 					))}
