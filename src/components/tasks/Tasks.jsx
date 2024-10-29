@@ -23,7 +23,7 @@ const Tasks = () => {
 		<section className='section tasks'>
 			<div className='container tasks__container'>
 				{/* Tasks Title */}
-				<h2 className='title mb--22'>Tasks</h2>
+				<h2 className='title title--22 mb--22'>Tasks</h2>
 
 				{/* Tasks List */}
 				<ul className='tasks__list'>

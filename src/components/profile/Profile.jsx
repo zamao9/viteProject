@@ -4,13 +4,11 @@ import ProfileAccount from './profileAccount/ProfileAccount';
 import ProfileReferrals from './profileReferrals/ProfileReferrals';
 import ProfileAchievements from './profileAchievements/ProfileAchievements';
 
-
 const Profile = ({ setPopup }) => {
 	const [curProfilePage, setProfilePage] = useState('account');
 	const [curTabsItem, setTabsItem] = useState('account');
 	const curReferrals = 123456;
 	const curPlayed = 58732;
-
 
 	const tabs = [
 		{ key: 'account', label: 'Account' },
@@ -42,11 +40,7 @@ const Profile = ({ setPopup }) => {
 
 				{/* Profile Account/ Referrals/ Achievements */}
 				{curProfilePage === 'account' && (
-					<ProfileAccount
-						setPopup={setPopup}
-						curReferrals={curReferrals}
-						curPlayed={curPlayed}
-					/>
+					<ProfileAccount setPopup={setPopup} curReferrals={curReferrals} curPlayed={curPlayed} />
 				)}
 				{curProfilePage === 'referrals' && <ProfileReferrals />}
 				{curProfilePage === 'achievements' && <ProfileAchievements />}

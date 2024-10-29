@@ -21,7 +21,6 @@ export default defineConfig({
 			helpers: '/src/helpers',
 			feature: '/src/feature',
 			hooks: '/src/hooks',
-			catAnimations: '/src/components/catAnimations',
 		},
 	},
 	build: {

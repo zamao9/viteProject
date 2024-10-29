@@ -12,9 +12,9 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<Provider store={store}>
-			<TonConnectUIProvider manifestUrl="http://localhost:5173/tonconnect-manifest.json">
+			<TonConnectUIProvider manifestUrl='http://localhost:5173/tonconnect-manifest.json'>
 				<App />
-			</TonConnectUIProvider >
+			</TonConnectUIProvider>
 		</Provider>
 	</StrictMode>
 );

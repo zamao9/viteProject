@@ -13,6 +13,7 @@ import AccountImage from '/src/assets/image/profile/avatar3.webp';
 import Tasks from './components/tasks/Tasks';
 import { TonConnectButton } from '@tonconnect/ui-react';
 import Balance from './components/balance/Balance';
+import Notifications from './components/notifications/Notifications';
 
 function App() {
 	const [curPage, setPage] = useState('registration');
@@ -21,15 +22,20 @@ function App() {
 
 	return (
 		<>
+			{/* Popup */}
 			{curPopup === true && <Popup setPopup={setPopup} />}
-			<Header
-				setHeaderPage={setPage}
-				curHeaderItem={curItemActive}
-				setHeaderItem={setItemActive}
-			/>
+
+			{/* Header */}
+			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} />
 
 			<main className='section main'>
 				<div className='container main__container'>
+					{/* Balance set in Header component */}
+					{curPage === 'balance' && <Balance />}
+
+					{/* Notifications */}
+					{curPage === 'notifications' && <Notifications />}
+
 					{/* Profile set in Header component*/}
 					{curPage === 'profile' && <Profile setPopup={setPopup} />}
 
@@ -44,9 +50,6 @@ function App() {
 
 					{/* Tasks set in Footer Component  */}
 					{curPage === 'tasks' && <Tasks />}
-
-					{/* Balance set in Header component */}
-					{curPage === 'balance' && <Balance />}
 
 					{/* GamesSearch */}
 					{/* <Games /> */}

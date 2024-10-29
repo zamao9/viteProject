@@ -10,14 +10,33 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 	const AccountImage = useAppSelector(selectProfileImg);
 	const headerItems = [
 		{
-			key: 'not-done',
-			icon: <NotificationIcon />,
+			key: 'balance',
+			iconDiv: (
+				<>
+					<div className='header__icon header-balance'>
+						<div className='header__icon plus-icon'>
+							<PlusIcon />
+						</div>
+						<span className='title title--14 header-balance__item other-coin color--green'>999 AFR$</span>
+					</div>
+				</>
+			),
+		},
+		{
+			key: 'notifications',
+			iconDiv: (
+				<div className='header__icon'>
+					<NotificationIcon />
+				</div>
+			),
 		},
 		{
 			key: 'profile',
-			icon: (
-				<div className='header__profile'>
-					<img src={AccountImage} alt='header profile avatar image' />
+			iconDiv: (
+				<div className='header__icon'>
+					<div className='header__profile'>
+						<img src={AccountImage} alt='header profile avatar image' />
+					</div>
 				</div>
 			),
 		},
@@ -34,19 +53,9 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 				{/* Header List */}
 				<ul className='header__list'>
 					{/* Header Item for Balance */}
-					<li
-						className='header__item header-balance	'
-						onClick={() => {
-							setHeaderPage('balance');
-						}}
-					>
-						<div className='header__icon plus-icon'>
-							<PlusIcon />
-						</div>
-						<span className='title title--14 header-balance__item other-coin color--green'>999 AFR$</span>
-					</li>
+
 					{/* Header Items */}
-					{headerItems.map(({ key, icon }) => (
+					{headerItems.map(({ key, iconDiv }) => (
 						<li
 							key={key}
 							className={`header__item ${curHeaderItem === key ? 'active' : ''}`}
@@ -55,7 +64,7 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 								setHeaderItem(key);
 							}}
 						>
-							<div className='header__icon'>{icon}</div>
+							{iconDiv}
 						</li>
 					))}
 				</ul>

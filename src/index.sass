@@ -12,7 +12,6 @@ body
 	line-height: 140%
 
 	color: vars.$c-text
-	background-color: vars.$c-bg900
 
 .section
 	max-width: 500px
@@ -20,6 +19,7 @@ body
 	padding-bottom: 30px
 	margin-right: auto
 	margin-left: auto
+	background-color: vars.$c-bg900
 
 .container
 	width: 100%
@@ -27,10 +27,7 @@ body
 	margin-right: auto
 	margin-bottom: 0
 	margin-left: auto
-	padding-top: 0
-	padding-right: 15px
-	padding-bottom: 0
-	padding-left: 15px
+	padding: 0 15px
 
 .title
 	font-family: vars.$f-title
@@ -125,12 +122,13 @@ body
 	padding-left: 18px
 	margin-right: auto
 	margin-left: auto
-	color: vars.$c-text
+	color: vars.$c-text-hover
 	font-family: vars.$f-title
 	font-size: 16px
 	font-weight: 600
 	line-height: 16px
-	@include vars.button
+	background-color: vars.$c-blue
+	// @include vars.button
 	@include vars.border-radius6
 	cursor: pointer
 	transition: 0.2s ease
@@ -147,12 +145,13 @@ body
 	padding-right: 10px
 	padding-bottom: 6px
 	padding-left: 10px
-	color: vars.$c-text
+	color: vars.$c-text-hover
 	font-family: vars.$f-title
 	font-size: 16px
 	font-weight: 600
 	line-height: 16px
-	@include vars.button
+	background-color: vars.$c-blue
+	// @include vars.button
 	@include vars.border-radius6
 	transition: 0.2s ease
 	transition: 0.2s ease

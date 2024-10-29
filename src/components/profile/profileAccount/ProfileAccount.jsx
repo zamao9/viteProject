@@ -1,11 +1,12 @@
 import { formatNumber, formatNumberShort } from '../../../helpers/FormatNumber';
 import './profileAccount.sass';
 import { useAppSelector } from 'hooks/store';
-import Changer from '/src/assets/svg/changer.svg';
 import { selectProfileImg } from 'feature/user/userSelector';
+import Changer from '/src/assets/svg/changer.svg';
 
 const accountAccount = ({ setPopup, curReferrals, curPlayed }) => {
 	const AccountImage = useAppSelector(selectProfileImg);
+
 	return (
 		<div className='account'>
 			{/* Account Image */}

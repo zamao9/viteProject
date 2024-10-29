@@ -15,6 +15,17 @@ const RegistrationAll = () => {
 			minutes: 55,
 			seconds: 55,
 		},
+		{
+			key: 2,
+			players: 143,
+			price: 30,
+			title: 'GameName1',
+			img: Image1,
+			days: 99,
+			hours: 23,
+			minutes: 55,
+			seconds: 55,
+		},
 	];
 
 	return (

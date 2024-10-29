@@ -19,13 +19,13 @@ const TransactionHistory = () => {
 		{
 			key: 3,
 			type: 'withdraw',
-			date: '01.12.24',
+			date: '08.12.24',
 			amount: 150,
 		},
 		{
 			key: 4,
 			type: 'deposit',
-			date: '01.12.24',
+			date: '10.12.24',
 			amount: 2000000000000000,
 		},
 	];

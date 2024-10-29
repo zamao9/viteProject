@@ -26,13 +26,6 @@ const Popup = ({ setPopup }) => {
 		visible: { opacity: 1 }, // Конечное состояние (видимо)
 	};
 
-	const handleAvatarSelect = (selectedAvatar) => {
-		if (selectedAvatar) {
-			dispatch(setProfileImg(selectedAvatar));
-			setPopup(false);
-		}
-	};
-
 	return (
 		<motion.section
 			className='section popup'
@@ -63,7 +56,10 @@ const Popup = ({ setPopup }) => {
 				<button
 					className='button'
 					onClick={() => {
-						handleAvatarSelect(selectedAvatar)
+						if (selectedAvatar) {
+							dispatch(setProfileImg(selectedAvatar));
+							setPopup(false);
+						}
 					}}
 				>
 					Change

@@ -1,13 +1,18 @@
-import { formatNumberShort } from '../../../helpers/FormatNumber';
+import { formatNumberShort } from 'helpers/FormatNumber';
 
 const TransactionHistoryItem = ({ type, date, amount }) => {
 	return (
 		<li className='transaction-history__item'>
-			<span className={`text text--16 text-deposit ${type === 'deposit' ? 'color--yellow' : 'color--green'}`}>
+			<span className={`text text--16 text-deposit ${type === 'deposit' ? 'color--green' : 'color--yellow'}`}>
 				{type}
 			</span>
-			<span className='title title--16 transaction-history__title'>{date}</span>
-			<span className='title title--16 transaction-history__title'>{formatNumberShort(amount)} TON</span>
+			<span className='text text--16 transaction-history__title'>{date}</span>
+			<span
+				className={`text text--16 transaction-history__title ${type === 'deposit' ? 'color--green' : 'color--yellow'}`}
+			>
+				{type === 'deposit' ? '+ ' : '- '}
+				{formatNumberShort(amount)} AFR
+			</span>
 		</li>
 	);
 };
