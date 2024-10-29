@@ -7,8 +7,11 @@ import PopupItem from './popupItem/PopupItem';
 import { CloseIcon } from '/src/constants/svgImages';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useAppDispatch } from 'hooks/store';
+import { setProfileImg } from 'feature/user/userSlice';
 
-const Popup = ({ setPopup, setProfileImg }) => {
+const Popup = ({ setPopup }) => {
+	const dispatch = useAppDispatch();
 	const avatars = [
 		{ img: Avatar1, key: 1 },
 		{ img: Avatar2, key: 2 },
@@ -21,6 +24,13 @@ const Popup = ({ setPopup, setProfileImg }) => {
 	const variants = {
 		hidden: { opacity: 0 }, // Начальное состояние (скрыто)
 		visible: { opacity: 1 }, // Конечное состояние (видимо)
+	};
+
+	const handleAvatarSelect = (selectedAvatar) => {
+		if (selectedAvatar) {
+			dispatch(setProfileImg(selectedAvatar));
+			setPopup(false);
+		}
 	};
 
 	return (
@@ -53,10 +63,7 @@ const Popup = ({ setPopup, setProfileImg }) => {
 				<button
 					className='button'
 					onClick={() => {
-						if (selectedAvatar) {
-							setProfileImg(selectedAvatar);
-							setPopup(false);
-						}
+						handleAvatarSelect(selectedAvatar)
 					}}
 				>
 					Change

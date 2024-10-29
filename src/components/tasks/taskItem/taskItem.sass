@@ -1,9 +1,9 @@
-@import '/src/vars'
+@use '../../../vars'
 
 .tasks-item
-	background-color: $c-bg800
-	@include border
-	@include border-radius
+	background-color: vars.$c-bg800
+	@include vars.border
+	@include vars.border-radius
 
 	.task
 		display: flex
@@ -16,9 +16,9 @@
 		&__image
 			flex: 0 0 60px
 			height: 60px
-			background-color: $c-bg900
-			@include border
-			@include border-radius6
+			background-color: vars.$c-bg900
+			@include vars.border
+			@include vars.border-radius6
 			overflow: hidden
 
 		&__content

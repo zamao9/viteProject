@@ -1,4 +1,4 @@
-@import '/src/vars'
+@use '../../vars'
 
 .header
 	position: fixed
@@ -25,11 +25,11 @@
 		padding: 10px
 		cursor: pointer
 		transition: 0.2s ease
-		background-color: $c-bg800
-		@include border
-		@include border-radius
+		background-color: vars.$c-bg800
+		@include vars.border
+		@include vars.border-radius
 		svg
-			fill: $c-text
+			fill: vars.$c-text
 
 	&__list
 		display: flex
@@ -38,16 +38,16 @@
 		width: 100%
 		height: 60px
 		padding: 0 15px
-		background-color: $c-bg800
-		@include border
-		@include border-radius
+		background-color: vars.$c-bg800
+		@include vars.border
+		@include vars.border-radius
 
 	&__item
 		flex-grow: 0
 		position: relative
 		margin-left: 5px
 		margin-right: 5px
-		@include border-radius6
+		@include vars.border-radius6
 		transition: 0.2s ease
 		cursor: pointer
 		&:first-child
@@ -66,11 +66,11 @@
 			transform: translateY(-50%)
 			width: 1px
 			height: 50px
-			background-color: $c-bg700
+			background-color: vars.$c-bg700
 		&.active
-			background-color: $c-bg700
+			background-color: vars.$c-bg700
 			.header__icon svg
-				fill: $c-text-hover
+				fill: vars.$c-text-hover
 
 	.header-balance
 		display: flex
@@ -97,7 +97,7 @@
 		width: 50px
 		height: 50px
 		svg
-			fill: $c-text
+			fill: vars.$c-text
 		/* Active Item */
 
 	.plus-icon
@@ -108,7 +108,7 @@
 		height: 35px
 		width: 35px
 		overflow: hidden
-		@include border-radius
+		@include vars.border-radius
 		& img
 			height: 100%
 			object-fit: contain
@@ -116,12 +116,12 @@
 @media (any-hover:hover)
 	.header
 		&__logo:hover
-			background-color: $c-bg700
+			background-color: vars.$c-bg700
 			svg
-				fill: $c-text-hover
+				fill: vars.$c-text-hover
 
 		&__item:not(:first-child):hover
-			background-color: $c-bg700
+			background-color: vars.$c-bg700
 			.header__icon
 				svg
-					fill: $c-text-hover
+					fill: vars.$c-text-hover

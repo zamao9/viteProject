@@ -1,9 +1,9 @@
-@import '/src/vars'
+@use '../../../vars'
 
 .registration-item
-	@include border
-	@include border-radius
-	background-color: $c-bg800
+	@include vars.border
+	@include vars.border-radius
+	background-color: vars.$c-bg800
 
 	.registration-card
 		display: grid
@@ -21,9 +21,9 @@
 		&__image
 			flex: 0 0 82px
 			height: 82px
-			@include border
-			@include border-radius
-			background-color: $c-bg900
+			@include vars.border
+			@include vars.border-radius
+			background-color: vars.$c-bg900
 			overflow: hidden
 
 		&__data-wrapper

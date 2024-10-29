@@ -1,4 +1,4 @@
-@import '/src/vars'
+@use '../../vars'
 
 .popup
 	position: fixed
@@ -18,9 +18,9 @@
 		position: relative
 		padding-top: 77px
 		padding-bottom: 77px
-		background-color: $c-bg800
-		@include border
-		@include border-radius
+		background-color: vars.$c-bg800
+		@include vars.border
+		@include vars.border-radius
 
 	&__close
 		position: absolute
@@ -33,11 +33,11 @@
 		height: 40px
 		cursor: pointer
 		transition: 0.2s ease
-		@include border-radius
+		@include vars.border-radius
 		svg
 			width: 24px
 			height: 24px
-			fill: $c-text
+			fill: vars.$c-text
 
 	&__title
 		text-align: center
@@ -51,23 +51,23 @@
 		margin-bottom: 77px
 
 	&__item
-		background-color: $c-bg900
-		@include border
-		@include border-radius
+		background-color: vars.$c-bg900
+		@include vars.border
+		@include vars.border-radius
 		cursor: pointer
 		transition: background-color 0.2s ease, transform 0.2s ease, filter 0.2s ease
 
 		&.selected
-			background-color: $c-bg700
+			background-color: vars.$c-bg700
 			transform: scale(1.08)
 
 @media (any-hover:hover)
 	.popup
 		&__close:hover
-			background-color: $c-bg700
+			background-color: vars.$c-bg700
 			svg
-				fill: $c-text-hover
+				fill: vars.$c-text-hover
 
 		&__item:hover
 			transform: scale(1.08)
-			background-color: $c-bg700
+			background-color: vars.$c-bg700

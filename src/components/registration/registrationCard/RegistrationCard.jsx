@@ -15,7 +15,7 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 	const remainingMinutes = Math.floor((timeLeft % 3600) / 60);
 	const remainingSeconds = timeLeft % 60;
 
-	console.log(timeLeft);
+	//console.log(timeLeft);
 
 	useEffect(() => {
 		// Если время закончилось, не запускаем таймер

@@ -1,4 +1,4 @@
-@import '/src/vars'
+@use '../../vars'
 
 /* About */
 .about
@@ -15,8 +15,8 @@
 		padding-right: 18px
 		padding-bottom: 13px
 		padding-left: 18px
-		background-color: $c-bg800
-		@include border
+		background-color: vars.$c-bg800
+		@include vars.border
 		border-radius: 9px 0 0 0
 
 	&__button
@@ -31,8 +31,8 @@
 		padding-right: 18px
 		padding-bottom: 12px
 		padding-left: 18px
-		color: $c-text
-		@include border
+		color: vars.$c-text
+		@include vars.border
 		border-radius: 0 0 9px 9px
 		resize: none
 		&:focus

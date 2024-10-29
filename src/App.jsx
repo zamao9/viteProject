@@ -18,22 +18,20 @@ function App() {
 	const [curPage, setPage] = useState('registration');
 	const [curItemActive, setItemActive] = useState('registration');
 	const [curPopup, setPopup] = useState(false);
-	const [profileImg, setProfileImg] = useState(AccountImage);
 
 	return (
 		<>
-			{curPopup === true && <Popup setPopup={setPopup} setProfileImg={setProfileImg} />}
+			{curPopup === true && <Popup setPopup={setPopup} />}
 			<Header
 				setHeaderPage={setPage}
 				curHeaderItem={curItemActive}
 				setHeaderItem={setItemActive}
-				AccountImage={profileImg}
 			/>
 
 			<main className='section main'>
 				<div className='container main__container'>
 					{/* Profile set in Header component*/}
-					{curPage === 'profile' && <Profile setPopup={setPopup} AccountImage={profileImg} />}
+					{curPage === 'profile' && <Profile setPopup={setPopup} />}
 
 					{/* Games set in Footer Component */}
 					{curPage === 'game-accounts' && <GameAccounts />}

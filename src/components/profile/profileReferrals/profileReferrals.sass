@@ -1,4 +1,4 @@
-@import '/src/vars'
+@use '../../../vars'
 
 /* Profile Referrals */
 .referrals
@@ -13,12 +13,12 @@
 		padding-bottom: 12px
 		padding-left: 16px
 		margin-bottom: 30px
-		background-color: $c-bg800
-		@include border
-		@include border-radius
+		background-color: vars.$c-bg800
+		@include vars.border
+		@include vars.border-radius
 
 	&__headline
-		color: $c-text-hover
+		color: vars.$c-text-hover
 
 	&__list
 		display: flex
@@ -40,6 +40,6 @@
 		padding-right: 16px
 		padding-bottom: 10px
 		padding-left: 16px
-		background-color: $c-bg800
-		@include border
-		@include border-radius
+		background-color: vars.$c-bg800
+		@include vars.border
+		@include vars.border-radius

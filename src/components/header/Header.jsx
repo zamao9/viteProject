@@ -1,10 +1,13 @@
+import { selectProfileImg } from '../../feature/user/userSelector';
+import { useAppSelector } from '../../hooks/store';
 import './header.sass';
 
 import Logo from '/src/assets/svg/logo.svg';
 import { PlusIcon } from '/src/constants/svgImages';
 import { NotificationIcon, LogoIcon } from '/src/constants/svgImages';
 
-const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem, AccountImage }) => {
+const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
+	const AccountImage = useAppSelector(selectProfileImg);
 	const headerItems = [
 		{
 			key: 'not-done',
