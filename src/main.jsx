@@ -7,6 +7,7 @@ import './fonts.scss';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import './index.css';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
