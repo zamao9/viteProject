@@ -17,7 +17,9 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 						<div className='header__icon plus-icon'>
 							<PlusIcon />
 						</div>
-						<span className='title title--14 header-balance__item other-coin color--green'>999 AFR$</span>
+						<span className='title title--14 header-balance__item other-coin color--green'>
+							999 AFR$
+						</span>
 					</div>
 				</>
 			),
@@ -58,7 +60,9 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 					{headerItems.map(({ key, iconDiv }) => (
 						<li
 							key={key}
-							className={`header__item ${curHeaderItem === key ? 'active' : ''}`}
+							className={`header__item ${
+								curHeaderItem === key ? 'active' : ''
+							}`}
 							onClick={() => {
 								setHeaderPage(key);
 								setHeaderItem(key);

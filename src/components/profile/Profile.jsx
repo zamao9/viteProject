@@ -40,7 +40,11 @@ const Profile = ({ setPopup }) => {
 
 				{/* Profile Account/ Referrals/ Achievements */}
 				{curProfilePage === 'account' && (
-					<ProfileAccount setPopup={setPopup} curReferrals={curReferrals} curPlayed={curPlayed} />
+					<ProfileAccount
+						setPopup={setPopup}
+						curReferrals={curReferrals}
+						curPlayed={curPlayed}
+					/>
 				)}
 				{curProfilePage === 'referrals' && <ProfileReferrals />}
 				{curProfilePage === 'achievements' && <ProfileAchievements />}

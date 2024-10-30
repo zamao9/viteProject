@@ -19,7 +19,8 @@ const accountAccount = ({ setPopup, curReferrals, curPlayed }) => {
 
 			{/* Account Name */}
 			<span className='title title--22 account__name'>
-				Jaga Jugu Jigi Jaga <span className='headline account__name-id'>#153658965</span>
+				Jaga Jugu Jigi Jaga{' '}
+				<span className='headline account__name-id'>#153658965</span>
 			</span>
 
 			{/* Account Stats */}
@@ -28,7 +29,9 @@ const accountAccount = ({ setPopup, curReferrals, curPlayed }) => {
 				<li className='account__stats-item'>
 					<div className='account__stat'>
 						<span className='account__stats-svg background--game'>Played</span>
-						<span className='subtitle subtitle--18'>{formatNumberShort(curPlayed)}</span>
+						<span className='subtitle subtitle--18'>
+							{formatNumberShort(curPlayed)}
+						</span>
 					</div>
 				</li>
 
@@ -43,8 +46,12 @@ const accountAccount = ({ setPopup, curReferrals, curPlayed }) => {
 				{/* Stats Item */}
 				<li className='account__stats-item'>
 					<div className='account__stat'>
-						<span className='account__stats-svg background--referrals'>Referrals</span>
-						<span className='subtitle subtitle--18'>{formatNumberShort(curReferrals)}</span>
+						<span className='account__stats-svg background--referrals'>
+							Referrals
+						</span>
+						<span className='subtitle subtitle--18'>
+							{formatNumberShort(curReferrals)}
+						</span>
 					</div>
 				</li>
 			</ul>

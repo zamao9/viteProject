@@ -40,7 +40,6 @@
 		right: 15px
 		display: flex
 		flex-direction: column
-		align-items: flex-start
 		gap: 22px
 		width: 180px
 		padding: 16px 22px
@@ -48,10 +47,18 @@
 		@include vars.border
 		@include vars.border-radius
 
+		&__list
+			display: flex
+			flex-direction: column
+			gap: 22px
+
 		&__item
 			display: flex
 			align-items: center
+			justify-content: space-between
 			gap: 16px
+			width: 100%
+			min-height: 30px
 			cursor: pointer
 			.wrap
 				fill: vars.$c-bg800
@@ -64,6 +71,10 @@
 					stroke: vars.$c-blue
 				.check
 					fill: vars.$c-text-hover
+		&__line
+			margin: 0
+			border: 0
+			border-bottom: 1px solid vars.$c-bg700
 
 	&__list
 		display: grid
@@ -116,7 +127,7 @@
 		&.active
 			svg
 				.cover
-					animation: trash-rotate 0.2s ease-out
+					animation: trash-rotate 0.2s linear
 					transform-origin: center 4px
 
 		@keyframes trash-rotate

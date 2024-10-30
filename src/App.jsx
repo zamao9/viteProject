@@ -23,7 +23,7 @@ function App() {
 	return (
 		<>
 			{/* Popup */}
-			{curPopup === true && <Popup setPopup={setPopup} />}
+			{curPopup === true && <Popup curPopup={curPopup} setPopup={setPopup} />}
 
 			{/* Header */}
 			<Header

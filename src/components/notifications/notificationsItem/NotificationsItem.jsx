@@ -25,7 +25,12 @@ const NotificationsItem = ({ title, description, isRead, type }) => {
 				className={`notifications__icon trash-icon ${
 					trashIcon === 'active' ? 'active' : ''
 				}`}
-				onClick={() => setTrashIcon('active')}
+				onClick={() => {
+					setTrashIcon('active'),
+						setTimeout(() => {
+							setTrashIcon('');
+						}, 200);
+				}}
 			>
 				<TrashIcon />
 			</div>
