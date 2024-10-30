@@ -2,10 +2,20 @@ import './registrationCard.sass';
 import { useState, useEffect } from 'react';
 import { formatTime } from '/src/helpers/Timers';
 
-const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, minutes = 0, seconds = 0 }) => {
+const RegistrationCard = ({
+	players,
+	price,
+	title,
+	img,
+	days = 0,
+	hours = 0,
+	minutes = 0,
+	seconds = 0,
+}) => {
 	const [curButton, setButton] = useState(null);
 
-	const calculateInitialTimeLeft = () => days * 24 * 3600 + hours * 3600 + minutes * 60 + seconds;
+	const calculateInitialTimeLeft = () =>
+		days * 24 * 3600 + hours * 3600 + minutes * 60 + seconds;
 
 	const [timeLeft, setTimeLeft] = useState(calculateInitialTimeLeft());
 
@@ -52,7 +62,9 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 							</span>
 						</div>
 						<button
-							className={`small-button registration-card__button ${curButton ? 'button--disabled' : ''}`}
+							className={`small-button registration-card__button ${
+								curButton ? 'button--disabled' : ''
+							}`}
 							onClick={() => {
 								setButton('button--disabled');
 							}}
@@ -67,7 +79,9 @@ const RegistrationCard = ({ players, price, title, img, days = 0, hours = 0, min
 					{/* Registration Price */}
 					<div className='registration-card__footer-item'>
 						<span className='text text--14'>Price</span>
-						<span className='subtitle subtitle--18 color--green'>{price} TON</span>
+						<span className='subtitle subtitle--18 color--green'>
+							{price} TON
+						</span>
 					</div>
 					{/* Registration Players */}
 					<div className='registration-card__footer-item'>

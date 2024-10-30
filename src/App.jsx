@@ -26,7 +26,11 @@ function App() {
 			{curPopup === true && <Popup setPopup={setPopup} />}
 
 			{/* Header */}
-			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} />
+			<Header
+				setHeaderPage={setPage}
+				curHeaderItem={curItemActive}
+				setHeaderItem={setItemActive}
+			/>
 
 			<main className='section main'>
 				<div className='container main__container'>
@@ -58,7 +62,11 @@ function App() {
 				</div>
 			</main>
 
-			<Footer setFooterPage={setPage} curFooterItem={curItemActive} setFooterItem={setItemActive} />
+			<Footer
+				setFooterPage={setPage}
+				curFooterItem={curItemActive}
+				setFooterItem={setItemActive}
+			/>
 		</>
 	);
 }

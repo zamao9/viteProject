@@ -84,8 +84,6 @@
 		min-height: 0
 		padding: 0
 		margin: 0
-		svg
-			fill: vars.$c-text
 
 	&__counter
 		display: flex
@@ -97,3 +95,9 @@
 		background-color: vars.$c-bg900
 		@include vars.border
 		@include vars.border-radius6
+
+@media (any-hover:hover)
+	.transaction-history
+		&__button:hover
+			svg
+				fill: vars.$c-text-hover

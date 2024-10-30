@@ -127,7 +127,7 @@ body
 	font-size: 16px
 	font-weight: 600
 	line-height: 16px
-	background-color: vars.$c-blue
+	background-color: #5588CC
 	// @include vars.button
 	@include vars.border-radius6
 	cursor: pointer
@@ -150,16 +150,20 @@ body
 	font-size: 16px
 	font-weight: 600
 	line-height: 16px
-	background-color: vars.$c-blue
+	background-color: #5588CC
 	// @include vars.button
 	@include vars.border-radius6
 	transition: 0.2s ease
 	transition: 0.2s ease
 	cursor: pointer
 
+svg
+	fill: vars.$c-text
+	transition: 0.2s ease
+
 /* Modificators */
 .button--disabled
-	background: #536465
+	background: #4B525A
 	color: vars.$c-text-disabled
 	pointer-events: none
 
@@ -178,6 +182,9 @@ body
 
 .lh--140
 	line-height: 140%
+
+.center
+	text-align: center
 
 /* Colors */
 .color--green
@@ -202,9 +209,9 @@ body
 			color: vars.$c-text-hover
 
 	.small-button:hover
-		@include vars.button-hover
+		background-color: vars.$c-blue
 		color: vars.$c-text-hover
 
 	.button:hover
-		@include vars.button-hover
+		background-color: vars.$c-blue
 		color: vars.$c-text-hover
