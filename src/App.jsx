@@ -16,8 +16,8 @@ import Balance from './components/balance/Balance';
 import Notifications from './components/notifications/Notifications';
 
 function App() {
-	const [curPage, setPage] = useState('registration');
-	const [curItemActive, setItemActive] = useState('registration');
+	const [curPage, setPage] = useState('notifications');
+	const [curItemActive, setItemActive] = useState('notifications');
 	const [curPopup, setPopup] = useState(false);
 
 	return (
@@ -57,6 +57,7 @@ function App() {
 
 					{/* GamesSearch */}
 					{/* <Games /> */}
+
 					{/* Deleted */}
 					{/* <Deleted /> */}
 				</div>

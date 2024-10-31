@@ -9,6 +9,7 @@ const initialState = {
 			description: 'The system has been updated to version 1.1.',
 			type: 'updates',
 			isRead: false,
+			animation: false,
 		},
 		{
 			id: 2,
@@ -16,6 +17,7 @@ const initialState = {
 			description: 'You have a new private message.',
 			type: 'messages',
 			isRead: false,
+			animation: false,
 		},
 		// {
 		// 	id: 3,
@@ -92,6 +94,15 @@ export const notificationsSlice = createSlice({
 				(n) => n.id !== action.payload
 			);
 		},
+		// Изменение состояния анимации
+		markRemoveAnimation(state, action) {
+			const notification = state.notifications.find(
+				(n) => n.id === action.payload
+			);
+			if (notification) {
+				notification.animation = true;
+			}
+		},
 	},
 });
 
@@ -101,5 +112,6 @@ export const {
 	addNotification,
 	markAsRead,
 	removeNotification,
+	markRemoveAnimation,
 } = notificationsSlice.actions;
 export default notificationsSlice.reducer;

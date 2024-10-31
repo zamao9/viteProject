@@ -4,7 +4,10 @@ import { useAppSelector } from '../../hooks/store';
 import './notifications.sass';
 import NotificationsItem from './notificationsItem/NotificationsItem';
 import { SettingsIcon, CheckboxIcon } from '/src/constants/svgImages';
-import { markAsRead } from '../../feature/notifications/notificationsSlice';
+import {
+	markRemoveAnimation,
+	removeNotification,
+} from '../../feature/notifications/notificationsSlice';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -60,7 +63,6 @@ const Notifications = () => {
 	const [settingsButton, setSettingsButton] = useState(false);
 	const notificationsData = useAppSelector(selectAllNotifications);
 	const dispatch = useDispatch();
-	dispatch(markAsRead(2));
 
 	const settingsButtonClick = () => {
 		setCheckboxActive(!settingsButton);
@@ -72,6 +74,8 @@ const Notifications = () => {
 			}, 200);
 		}
 	};
+
+	console.log(notificationsData);
 
 	return (
 		<>
@@ -159,13 +163,25 @@ const Notifications = () => {
 					{/* Notification List */}
 					<ul className='notifications__list'>
 						{notificationsData.map((element) => (
-							<NotificationsItem
+							<motion.div
+								initial={{ x: '0' }}
+								animate={{ x: 0 }}
+								exit={element.animation ? { x: '-100%' } : {}}
+								transition={{ duration: 0.2, ease: 'easeOut' }}
 								key={element.id}
-								title={element.title}
-								description={element.description}
-								isRead={element.isRead}
-								type={element.type}
-							/>
+							>
+								<NotificationsItem
+									key={element.id}
+									title={element.title}
+									description={element.description}
+									isRead={element.isRead}
+									type={element.type}
+									markRemoveAnimation={dispatch(
+										markRemoveAnimation(element.id)
+									)}
+									removeNotification={dispatch(removeNotification(element.id))}
+								/>
+							</motion.div>
 						))}
 					</ul>
 				</div>
