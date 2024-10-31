@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { UpdateIcon, MessageIcon } from '/src/constants/svgImages';
-import { TrashIcon } from '../../../constants/svgImages';
+import { CheckIcon, CloseIcon, TrashIcon } from '../../../constants/svgImages';
+import './notoficationsItem.sass';
 
 const NotificationsItem = ({ title, description, isRead, type }) => {
 	const [trashIcon, setTrashIcon] = useState(null);
 	const [curIcon, setIcon] = useState(<MessageIcon />);
+	const [trashButtonsActive, setTrashButtonsActive] = useState('null');
 
 	useEffect(() => {
 		if (type === 'updates') {
@@ -12,27 +14,45 @@ const NotificationsItem = ({ title, description, isRead, type }) => {
 		}
 	}, []);
 
+	const trashButtonClick = () => {
+		setTrashIcon('active'),
+			setTimeout(() => {
+				setTrashIcon('');
+			}, 200);
+		if (setTrashIcon) {
+			setTimeout(() => {
+				setTrashButtonsActive('active');
+			}, 200);
+		}
+	};
+
 	return (
-		<li className={`notifications__item ${isRead ? 'is-read' : ''}`}>
-			<div className='notifications__icon'>{curIcon}</div>
-
-			<div className='notifications__content'>
-				<span className='title title--18 notifications__title'>{title}</span>
-				<span className='lh-140 notifications__description'>{description}</span>
+		<li className={`li-notifications ${isRead ? 'is-read' : ''}`}>
+			<div className='li-notifications__icon'>{curIcon}</div>
+			<div className='li-notifications__content'>
+				<span className='title title--18 li-notifications__title'>{title}</span>
+				<span className='lh-140 li-notifications__description'>
+					{description}
+				</span>
 			</div>
-
 			<div
-				className={`notifications__icon trash-icon ${
+				className={`li-notifications__icon trash-icon ${
 					trashIcon === 'active' ? 'active' : ''
 				}`}
 				onClick={() => {
-					setTrashIcon('active'),
-						setTimeout(() => {
-							setTrashIcon('');
-						}, 200);
+					trashButtonClick();
 				}}
 			>
 				<TrashIcon />
+			</div>
+
+			<div
+				className={`trash-buttons ${
+					trashButtonsActive === 'active' ? 'active' : ''
+				}`}
+			>
+				<CheckIcon />
+				<CloseIcon />
 			</div>
 		</li>
 	);

@@ -1,5 +1,10 @@
 import './footer.sass';
-import { RegistrationIcon, GameAccountsIcon, NotDoneIcon, TasksIcon } from '/src/constants/svgImages';
+import {
+	RegistrationIcon,
+	GameAccountsIcon,
+	NotDoneIcon,
+	TasksIcon,
+} from '/src/constants/svgImages';
 
 const footerItems = [
 	{ id: 'registration', icon: <RegistrationIcon />, key: 'Registration' },
@@ -17,7 +22,9 @@ const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
 					{footerItems.map((item) => (
 						<li
 							key={item.key}
-							className={`footer__item ${curFooterItem === item.id ? 'active' : ''}`}
+							className={`footer__item ${
+								curFooterItem === item.id ? 'active' : ''
+							}`}
 							onClick={() => {
 								setFooterItem(item.id);
 								setFooterPage(item.id);
