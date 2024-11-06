@@ -1,5 +1,10 @@
 import './transactionHistory.sass';
-import { ArrowLeftIcon, ArrowRightIcon, DoubleArrowLeftIcon, DoubleArrowRightIcon } from '../../../constants/svgImages';
+import {
+	ArrowLeftIcon,
+	ArrowRightIcon,
+	DoubleArrowLeftIcon,
+	DoubleArrowRightIcon,
+} from '../../../constants/svgImages';
 import TransactionHistoryItem from '../transactionHistoryItem/TransactionHistoryItem';
 
 const TransactionHistory = () => {
@@ -34,14 +39,25 @@ const TransactionHistory = () => {
 		<div className='transaction-history'>
 			<div className='transaction-history__content'>
 				<div className='transaction-history__header'>
-					<span className='title title--18 transaction-history__element'>Type</span>
-					<span className='title title--18 transaction-history__element'>Date</span>
-					<span className='title title--18 transaction-history__element'>Amount</span>
+					<span className='title title--16 transaction-history__element'>
+						Type
+					</span>
+					<span className='title title--16 transaction-history__element'>
+						Date
+					</span>
+					<span className='title title--16 transaction-history__element'>
+						Amount
+					</span>
 				</div>
 
 				<ul className='transaction-history__list'>
 					{transactionHistoryData.map((element) => (
-						<TransactionHistoryItem key={element.key} type={element.type} date={element.date} amount={element.amount} />
+						<TransactionHistoryItem
+							key={element.key}
+							type={element.type}
+							date={element.date}
+							amount={element.amount}
+						/>
 					))}
 				</ul>
 

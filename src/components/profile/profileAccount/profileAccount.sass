@@ -1,6 +1,7 @@
-@use '/src/vars'
+@use '../../../vars'
 
 .account
+	margin-top: 22px
 	word-break: break-word
 	/* Profile Image */
 	&__image
@@ -27,13 +28,13 @@
 			justify-content: center
 			width: 30px
 			height: 30px
-			background-color: #5588CC
 			@include vars.border-radius6
 			transition: 0.2s ease
 			cursor: pointer
-			img
-				width: 20px
-				height: 20px
+			svg
+				width: 30px
+				height: 30px
+				fill: vars.$c-text
 
 	/* Profile Name */
 	&__name
@@ -83,4 +84,5 @@
 @media (any-hover:hover)
 	.account
 		.changer:hover
-			background-color: vars.$c-blue
+			svg
+				fill: vars.$c-text-hover

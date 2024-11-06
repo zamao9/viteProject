@@ -20,6 +20,7 @@
 		padding-right: 18px
 		padding-bottom: 14px
 		padding-left: 18px
+		background-color: vars.$c-bg900
 		@include vars.border
 		@include vars.border-radius6
 
@@ -60,10 +61,11 @@
 			padding-right: 7px
 			padding-bottom: 15px
 			padding-left: 7px
-			background-color: vars.$c-bg800
+			background-color: vars.$c-bg900
 			border-right: 1px solid vars.$c-bg700
 			text-align: center
 			cursor: default
+			transition: 0.2s ease
 
 		&__subtitle
 			color: vars.$c-text
@@ -98,3 +100,10 @@
 			display: flex
 			gap: 15px
 			height: 44px
+
+@media (any-hover:hover)
+	.balance-balance
+		.switch
+			&__token:hover
+				.switch__header
+					background-color: vars.$c-bg700

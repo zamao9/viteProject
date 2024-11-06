@@ -44,6 +44,11 @@ const Notifications = () => {
 			name: 'Games',
 			isSelected: false,
 		},
+		{
+			key: 4,
+			name: 'Actions',
+			isSelected: false,
+		},
 	];
 	const [checkboxTypes, setcheckboxTypes] = useState(checkboxTypesInitial);
 
@@ -74,8 +79,6 @@ const Notifications = () => {
 			}, 200);
 		}
 	};
-
-	console.log(notificationsData);
 
 	return (
 		<>
@@ -162,27 +165,31 @@ const Notifications = () => {
 
 					{/* Notification List */}
 					<ul className='notifications__list'>
-						{notificationsData.map((element) => (
-							<motion.div
-								initial={{ x: '0' }}
-								animate={{ x: 0 }}
-								exit={element.animation ? { x: '-100%' } : {}}
-								transition={{ duration: 0.2, ease: 'easeOut' }}
-								key={element.id}
-							>
-								<NotificationsItem
+						<AnimatePresence>
+							{notificationsData.map((element) => (
+								<motion.div
+									initial={{ x: '0' }}
+									animate={{ x: 0 }}
+									exit={element.animation ? { x: '-100%' } : {}}
+									transition={{ duration: 0.2, ease: 'easeOut' }}
 									key={element.id}
-									title={element.title}
-									description={element.description}
-									isRead={element.isRead}
-									type={element.type}
-									markRemoveAnimation={dispatch(
-										markRemoveAnimation(element.id)
-									)}
-									removeNotification={dispatch(removeNotification(element.id))}
-								/>
-							</motion.div>
-						))}
+								>
+									<NotificationsItem
+										key={element.id}
+										title={element.title}
+										description={element.description}
+										isRead={element.isRead}
+										type={element.type}
+										markRemoveAnimation={() =>
+											dispatch(markRemoveAnimation(element.id))
+										}
+										removeNotification={() =>
+											dispatch(removeNotification(element.id))
+										}
+									/>
+								</motion.div>
+							))}
+						</AnimatePresence>
 					</ul>
 				</div>
 			</section>

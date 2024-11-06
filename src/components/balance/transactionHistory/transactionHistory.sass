@@ -28,10 +28,11 @@
 		@include vars.border
 		@include vars.border-radius6
 		span
-			width: 100%
+			flex: 1 0 fit-content
 			text-align: center
 		span:first-child
-			flex: 0 0 75px
+			flex-grow: 0
+			min-width: 75px
 			text-align: left
 		span:last-child
 			text-align: right
@@ -64,10 +65,11 @@
 			height: 1px
 			background-color: rgba( vars.$c-text-disabled, 0.3)
 		span
-			width: 100%
+			flex: 1 0 fit-content
 			text-align: center
 		span:first-child
-			flex: 0 0 75px
+			flex-grow: 0
+			min-width: 75px
 			text-align: left
 		span:last-child
 			text-align: right

@@ -17,7 +17,12 @@ const BalanceBalance = () => {
 						<div className='switch__header'>
 							<span className='title title--14 switch__subtitle'>AFR$</span>
 						</div>
-						<input id='ton' type='number' className='title title--16 switch__body' placeholder='1' />
+						<input
+							id='ton'
+							type='number'
+							className='title title--16 switch__body'
+							placeholder='1'
+						/>
 					</div>
 				</li>
 
@@ -31,7 +36,12 @@ const BalanceBalance = () => {
 						<div className='switch__header'>
 							<span className='title title--14 switch__subtitle'>TON</span>
 						</div>
-						<input id='ton' type='number' className='title title--16 switch__body' placeholder='0.1' />
+						<input
+							id='ton'
+							type='number'
+							className='title title--16 switch__body'
+							placeholder='0.1'
+						/>
 					</div>
 				</li>
 			</ul>

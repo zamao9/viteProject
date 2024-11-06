@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './popup.sass';
 import PopupAvatars from './popupAvatars/PopupAvatars';
 import PopupNotifications from './popupNotifications/PopupNotifications';
-import { CloseIcon } from '/src/constants/svgImages';
 import { AnimatePresence, motion } from 'framer-motion';
+import { CloseIconPopup } from '../../constants/svgImages';
 
 const Popup = ({ curPopup, setPopup }) => {
 	const variants = {
@@ -32,7 +32,7 @@ const Popup = ({ curPopup, setPopup }) => {
 								}, 200);
 						}}
 					>
-						<CloseIcon />
+						<CloseIconPopup />
 					</div>
 
 					<PopupAvatars setPopup={setPopup} />

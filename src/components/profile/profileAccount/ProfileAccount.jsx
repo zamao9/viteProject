@@ -2,7 +2,7 @@ import { formatNumber, formatNumberShort } from '../../../helpers/FormatNumber';
 import './profileAccount.sass';
 import { useAppSelector } from 'hooks/store';
 import { selectProfileImg } from 'feature/user/userSelector';
-import Changer from '/src/assets/svg/changer.svg';
+import { ChangerIcon } from '../../../constants/svgImages';
 
 const accountAccount = ({ setPopup, curReferrals, curPlayed }) => {
 	const AccountImage = useAppSelector(selectProfileImg);
@@ -12,7 +12,7 @@ const accountAccount = ({ setPopup, curReferrals, curPlayed }) => {
 			{/* Account Image */}
 			<div className='account__image'>
 				<div className='changer' onClick={() => setPopup(true)}>
-					<img src={Changer} alt='changer svg' />
+					<ChangerIcon />
 				</div>
 				<img src={AccountImage} alt='account image' />
 			</div>

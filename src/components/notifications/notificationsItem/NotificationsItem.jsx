@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
-import { UpdateIcon, MessageIcon } from '/src/constants/svgImages';
-import { CheckIcon, CloseIcon, TrashIcon } from 'constants/svgImages';
+import {
+	UpdateIcon,
+	MessageIcon,
+	CheckIconNotification,
+	CloseIconNotification,
+	TrashIcon,
+	ActionsIcon,
+	TournamentsIcon,
+	TechnicalWorkIcon,
+	WarningIcon,
+} from '/src/constants/svgImages';
 import './notoficationsItem.sass';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -12,14 +21,24 @@ const NotificationsItem = ({
 	markRemoveAnimation,
 	removeNotification,
 }) => {
-	const [trashIcon, setTrashIcon] = useState(null);
+	const [trashIcon, setTrashIcon] = useState(null); // trash icon animation
 	const [curIcon, setIcon] = useState(<MessageIcon />);
-	const [trashButtonsActive, setTrashButtonsActive] = useState('null');
+	const [trashButtonsActive, setTrashButtonsActive] = useState(null);
 	const [closeAnimation, setCloseAnimation] = useState(true);
+
+	const [itemClick, setItemClick] = useState(false); // click li element active
 
 	useEffect(() => {
 		if (type === 'updates') {
 			setIcon(<UpdateIcon />);
+		} else if (type === 'actions') {
+			setIcon(<ActionsIcon />);
+		} else if (type === 'tournaments') {
+			setIcon(<TournamentsIcon />);
+		} else if (type === 'tech-work') {
+			setIcon(<TechnicalWorkIcon />);
+		} else if (type === 'warning') {
+			setIcon(<WarningIcon />);
 		}
 	}, []);
 
@@ -38,7 +57,14 @@ const NotificationsItem = ({
 
 	return (
 		<AnimatePresence>
-			<li className={`li-notifications ${isRead ? 'is-read' : ''}`}>
+			<li
+				className={`li-notifications ${
+					isRead ? 'is-read' : itemClick === true ? 'is-read' : ''
+				}`}
+				onClick={() => {
+					setItemClick(true);
+				}}
+			>
 				<div className='li-notifications__icon'>{curIcon}</div>
 				<div className='li-notifications__content'>
 					<span className='title title--18 li-notifications__title'>
@@ -66,10 +92,10 @@ const NotificationsItem = ({
 							initial={{ x: '100%', y: '-50%' }}
 							animate={!closeAnimation ? { x: 0, y: '-50%' } : {}}
 							exit={{ x: '100%', y: '-50%' }}
-							transition={{ duration: 0.2, ease: 'easeOut' }}
+							transition={{ duration: 0.2 }}
 						>
-							<div onClick={() => markRemoveAnimation()}>
-								<CheckIcon />
+							<div onClick={() => removeNotification()}>
+								<CheckIconNotification />
 							</div>
 
 							<div
@@ -80,7 +106,7 @@ const NotificationsItem = ({
 										}, 300);
 								}}
 							>
-								<CloseIcon />
+								<CloseIconNotification />
 							</div>
 						</motion.div>
 					)}

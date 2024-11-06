@@ -4,7 +4,9 @@ const ProfileReferrals = () => {
 	return (
 		<div className='referrals'>
 			{/* Key Stats Summary Title */}
-			<h2 className='title title--22 mb--22 referrals__title'>Key stats summary</h2>
+			<h2 className='title title--22 mb--22 referrals__title'>
+				Key stats summary
+			</h2>
 
 			{/* Key Stats Summary Content*/}
 			<div className='referrals__stats'>

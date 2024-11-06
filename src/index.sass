@@ -80,7 +80,7 @@ body
 	justify-content: center
 	gap: 1px
 	width: 100%
-	margin-bottom: 30px
+	margin-bottom: 8px
 
 	&__item
 		flex: 1
@@ -186,6 +186,9 @@ svg
 .center
 	text-align: center
 
+.pointer-none
+	pointer-events: none
+
 /* Colors */
 .color--green
 	color: vars.$c-green
@@ -193,6 +196,10 @@ svg
 	color: vars.$c-yellow
 .color--blue
 	color: vars.$c-blue
+.fill--red
+	fill: vars.$c-red
+.fill--green
+	fill: vars.$c-green
 
 /* Background SVG */
 .background--game
@@ -201,6 +208,294 @@ svg
 	background-image: url('/src/assets/svg/star.svg')
 .background--referrals
 	background-image: url('/src/assets/svg/referrals.svg')
+
+/* Animation */
+@keyframes bell
+	0%
+		transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
+	10%
+		transform: rotate(15deg)
+		-webkit-transform: rotate(15deg)
+	20%
+		transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
+	30%
+		transform: rotate(-15deg)
+		-webkit-transform: rotate(-15deg)
+	40%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	50%
+		transform: rotate(15deg)
+		-webkit-transform: rotate(15deg)
+	60%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	70%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	80%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	90%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	100%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+
+@keyframes plus
+	0%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	50%
+		transform: rotate(90deg)
+		-webkit-transform: rotate(90deg)
+	100%
+		transform: rotate(90deg)
+		-webkit-transform: rotate(90deg)
+
+@keyframes registration1
+	0%
+		transform: scaleY(0)
+		-webkit-transform: scaleY(0)
+	50%
+		transform: scaleY(1.5)
+		-webkit-transform: scaleY(1.5)
+	100%
+		transform: scaleY(1)
+		-webkit-transform: scaleY(1)
+@keyframes registration2
+	0%
+		transform: scaleY(1)
+		-webkit-transform: scaleY(1)
+	50%
+		transform: scaleY(0.5)
+		-webkit-transform: scaleY(0.5)
+	100%
+		transform: scaleY(1)
+		-webkit-transform: scaleY(1)
+@keyframes registration3
+	0%
+		transform: scaleY(0)
+		-webkit-transform: scaleY(0)
+	50%
+		transform: scaleY(1.5)
+		-webkit-transform: scaleY(1.5)
+	100%
+		transform: scaleY(1)
+		-webkit-transform: scaleY(1)
+@keyframes registrationstar
+	0%
+		transform: translateY(-100%)
+		-webkit-transform: translateY(-100%)
+	100%
+		transform: translateY(0)
+		-webkit-transform: translateY(0)
+
+@keyframes games
+	0%
+		fill: vars.$c-text
+		-webkit-fill: vars.$c-text
+	25%
+		fill: vars.$c-text-disabled
+		-webkit-fill: vars.$c-text-disabled
+	50%
+		fill: vars.$c-text-hover
+		-webkit-fill: vars.$c-text-hover
+	75%
+		fill: vars.$c-text-disabled
+		-webkit-fill: vars.$c-text-disabled
+	100%
+		fill: vars.$c-text-hover
+		-webkit-fill: vars.$c-text-hover
+
+@keyframes task1
+	0%
+		opacity: 0
+		-webkit-opacity: 0
+	100%
+		opacity: 1
+		-webkit-opacity: 1
+@keyframes task2
+	0%
+		opacity: 0
+		-webkit-opacity: 0
+	100%
+		opacity: 1
+		-webkit-opacity: 1
+@keyframes task3
+	0%
+		opacity: 0
+		-webkit-opacity: 0
+	100%
+		opacity: 1
+		-webkit-opacity: 1
+@keyframes task4
+	0%
+		transform: translateY(100%)
+		-webkit-transform: translateY(100%)
+	100%
+		transform: translateY(0)
+		-webkit-transform: translateY(0)
+
+@keyframes chat1
+	0%
+		transform: scaleX(0)
+		-webkit-transform: scaleX(0)
+	100%
+		transform: scaleX(1)
+		-webkit-transform: scaleX(1)
+@keyframes chat2
+	0%
+		transform: scaleX(0)
+		-webkit-transform: scaleX(0)
+	100%
+		transform: scaleX(1)
+		-webkit-transform: scaleX(1)
+
+@keyframes trash-rotate
+	0%
+		transform: translate(0,0) rotate(0)
+		-webkit-transform: translate(0,0) rotate(0)
+	50%
+		transform: translate(0, -4px) rotate(180deg)
+		-webkit-transform: translate(0, -4px) rotate(180deg)
+	100%
+		transform: translate(0,0) rotate(360deg)
+		-webkit-transform: translate(0,0) rotate(360deg)
+
+@keyframes refresh
+	0%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	25%
+		transform: rotate(-180deg)
+		-webkit-transform: rotate(-180deg)
+	50%
+		transform: rotate(-360deg)
+		-webkit-transform: rotate(-360deg)
+	75%
+		transform: rotate(-360deg)
+		-webkit-transform: rotate(-360deg)
+	100%
+		transform: rotate(-360deg)
+		-webkit-transform: rotate(-360deg)
+
+@keyframes actions
+	0%
+		transform: rotateY(0)
+		-webkit-transform: rotateY(0)
+	10%
+		transform: rotateY(180deg)
+		-webkit-transform: rotateY(180deg)
+	20%
+		transform: rotateY(360deg)
+		-webkit-transform: rotateY(360deg)
+	30%
+		transform: rotateY(360deg)
+		-webkit-transform: rotateY(360deg)
+	100%
+		transform: rotateY(360deg)
+		-webkit-transform: rotateY(360deg)
+
+@keyframes message
+	0%
+		transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
+	10%
+		transform: rotate(15deg)
+		-webkit-transform: rotate(15deg)
+	20%
+		transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
+	30%
+		transform: rotate(-15deg)
+		-webkit-transform: rotate(-15deg)
+	40%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	50%
+		transform: rotate(15deg)
+		-webkit-transform: rotate(15deg)
+	60%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	70%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	80%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	90%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+	100%
+		transform: rotate(0)
+		-webkit-transform: rotate(0)
+
+@keyframes sword-left
+	0%
+		transform: translate(0, 0) rotate(0deg)
+		-webkit-transform: translate(0, 0) rotate(0deg)
+	10%
+		transform: translate(-3px, 5px) rotate(-25deg)
+		-webkit-transform: translate(-3px, 5px) rotate(-25deg)
+	20%
+		transform: translate(0, 2px) rotate(0deg)
+		-webkit-transform: translate(0, 2px) rotate(0deg)
+	30%
+		transform: translate(-3px, 5px) rotate(-25deg)
+		-webkit-transform: translate(-3px, 5px) rotate(-25deg)
+	40%
+		transform: translate(0, 0) rotate(0deg)
+		-webkit-transform: translate(0, 0) rotate(0deg)
+	100%
+		transform: translate(0, 0) rotate(0deg)
+		-webkit-transform: translate(0, 0) rotate(0deg)
+@keyframes sword-right
+	0%
+		transform: translate(0, 0) rotate(0deg)
+		-webkit-transform: translate(0, 0) rotate(0deg)
+	10%
+		transform: translate(3px, 5px) rotate(25deg)
+		-webkit-transform: translate(3px, 5px) rotate(25deg)
+	20%
+		transform: translate(0, 2px) rotate(0deg)
+		-webkit-transform: translate(0, 2px) rotate(0deg)
+	30%
+		transform: translate(3px, 5px) rotate(25deg)
+		-webkit-transform: translate(3px, 5px) rotate(25deg)
+	40%
+		transform: translate(0, 0) rotate(0deg)
+		-webkit-transform: translate(0, 0) rotate(0deg)
+	100%
+		transform: translate(0, 0) rotate(0deg)
+		-webkit-transform: translate(0, 0) rotate(0deg)
+
+@keyframes tech-work-left
+	0%
+		transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
+	100%
+		transform: rotate(180deg)
+		-webkit-transform: rotate(180deg)
+@keyframes tech-work-right
+	0%
+		transform: rotate(0deg)
+		-webkit-transform: rotate(0deg)
+	100%
+		transform: rotate(-180deg)
+		-webkit-transform: rotate(-180deg)
+
+@keyframes warning
+	0%
+		opacity: 1
+	50%
+		opacity: 0
+	100%
+		opacity: 1
 
 @media (any-hover:hover)
 	.tabs

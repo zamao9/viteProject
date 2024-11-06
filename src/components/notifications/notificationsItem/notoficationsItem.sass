@@ -4,8 +4,7 @@
 	position: relative
 	display: flex
 	align-items: center
-	gap: 16px
-	padding: 12px 16px
+	padding: 12px 16px 12px 20px
 	background-color: vars.$c-bg700
 	@include vars.border
 	@include vars.border-radius
@@ -14,54 +13,102 @@
 	overflow: hidden
 	&.is-read
 		background-color: vars.$c-bg800
-		.notification__icon
+		.li-notifications__icon
 			svg
 				fill: vars.$c-text
+		.refresh, .message
+			animation-play-state: paused
+		.message-dot
+			display: none
+		.actions
+			animation-play-state: paused
+		.sword-left, .sword-right
+			animation-play-state: paused
+		.tech-work-left, .tech-work-right
+			animation-play-state: paused
+		.warning
+			animation-play-state: paused
+
 		.trash-icon
 			background-color: vars.$c-bg800
-		.notification__title
-			color: vars.$c-text
-		.notification__description
-			color: vars.$c-text
+		.li-notifications__title
+			color: vars.$c-text-disabled
+		.li-notifications__description
+			color: vars.$c-text-disabled
 		.trash-buttons
 			border-color: vars.$c-bg700
+
+	&__content
+		margin-right: 16px
 
 	&__icon
 		flex: 0 0 40px
 		height: 40px
+		margin-right: 20px
 		svg
 			width: 100%
 			height: 100%
+			fill: vars.$c-text-hover
+		.refresh
+			transform-origin: center
+			-webkit-transform-origin: center
+			animation: refresh 3s linear infinite
+			-webkit-animation: refresh 3s linear infinite
+		.message
+			animation: message 1s linear infinite
+			-webkit-animation: message 1s linear infinite
+		.actions
+			transform-origin: center
+			-webkit-transform-origin: center
+			animation: actions 3s linear infinite
+			-webkit-animation: actions 3s linear infinite
+		.sword-left
+			transform-origin: left center
+			-webkit-transform-origin: left center
+			animation: sword-left 2s linear infinite
+			-webkit-animation: sword-left 2s linear infinite
+		.sword-right
+			transform-origin: right center
+			-webkit-transform-origin: right center
+			animation: sword-right 2s linear infinite
+			-webkit-animation: sword-right 2s linear infinite
+		.tech-work-left
+			transform-origin: 11px 13px
+			-webkit-transform-origin: 11px 13px
+			animation: tech-work-left 2s linear infinite
+			-webkit-animation: tech-work-left 2s linear infinite
+		.tech-work-right
+			transform-origin: 16px 8px
+			-webkit-transform-origin: 16px 8px
+			animation: tech-work-right 2s linear infinite
+			-webkit-animation: tech-work-right 2s linear infinite
+		.warning
+			transform-origin: 50% 17px
+			-webkit-transform-origin: 50% 17px
+			animation: warning 1s linear infinite
+			-webkit-animation: warning 1s linear infinite
+
 	.trash-icon
 		display: flex
 		justify-content: center
 		align-items: center
 		flex: 0 0 50px
 		height: 50px
+		margin-right: 0
 		@include vars.border-radius6
 		transition: 0.2s ease
 		svg
 			width: 40px
 			height: 40px
 			overflow: visible
+		.cover
+			transition: 0.2s ease
 		&.active
-			svg
-				.cover
-					animation: trash-rotate 0.2s linear
-					transform-origin: center 4px
-					-webkit-animation: trash-rotate 0.2s linear
-					-webkit-transform-origin: center 4px
-
-		@keyframes trash-rotate
-			0%
-				transform: translate(0,0) rotate(0)
-				-webkit-transform: translate(0,0) rotate(0)
-			50%
-				transform: translate(0, -4px) rotate(180deg)
-				-webkit-transform: translate(0, -4px) rotate(180deg)
-			100%
-				transform: translate(0,0) rotate(360deg)
-				-webkit-transform: translate(0,0) rotate(360deg)
+			.cover
+				animation: trash-rotate 0.2s linear
+				transform-origin: center 4px
+				-webkit-animation: trash-rotate 0.2s linear
+				-webkit-transform-origin: center 4px
 
 	&__content
 		display: grid
@@ -74,7 +121,7 @@
 		right: -100%
 		transform: translateY(-50%)
 		display: flex
-		gap: 12px
+		gap: 4px
 		height: 50px
 		padding: 4px
 		align-items: center
@@ -87,18 +134,28 @@
 		svg
 			width: 40px
 			height: 40px
+			path
+				transition: 0.2s ease
 		&.active
 			right: 0
 
 @media (any-hover:hover)
 	.li-notifications
-		&.is-read
-			.trash-icon:hover
+		&.is-read:hover
+			background-color: vars.$c-bg700
+			.trash-icon
 				background-color: vars.$c-bg700
-				svg
-					fill: vars.$c-text-hover
+				&:hover
+					background-color: vars.$c-bg800
+					svg
+						fill: vars.$c-text-hover
 
 		.trash-icon:hover
 			background-color: vars.$c-bg800
-			svg
+			svg, .cover
 				fill: vars.$c-text-hover
+
+		.trash-buttons
+			svg:hover
+				path
+					opacity: 1

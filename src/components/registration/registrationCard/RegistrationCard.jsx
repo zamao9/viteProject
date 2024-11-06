@@ -51,7 +51,7 @@ const RegistrationCard = ({
 					<div className='registration-card__data-wrapper'>
 						<div className='registration-card__data'>
 							<span className='text text--14'>{title}</span>
-							<span className='subtitle subtitle--18'>
+							<span className='subtitle subtitle--16'>
 								{' '}
 								{formatTime({
 									days: remainingDays,
