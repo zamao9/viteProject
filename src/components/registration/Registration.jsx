@@ -12,16 +12,12 @@ const Registration = () => {
 		<section className='section registration'>
 			<div className='container registration__container'>
 				{/* Registration Title */}
-				<h2 className='title title--22 mb--22 registration__title'>
-					Registration
-				</h2>
+				<h2 className='title title--22 mb--22 registration__title'>Registration</h2>
 				{/* Tabs */}
 				<ul className='tabs'>
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${
-							curRegistrationItem === 'all' ? 'active' : null
-						}`}
+						className={`tabs__item ${curRegistrationItem === 'all' ? 'active' : null}`}
 						onClick={() => {
 							setRegistrationItem('all'), setRegistrationPage('all');
 						}}
@@ -33,9 +29,7 @@ const Registration = () => {
 
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${
-							curRegistrationItem === 'not-done' ? 'active' : null
-						}`}
+						className={`tabs__item ${curRegistrationItem === 'not-done' ? 'active' : null}`}
 						onClick={() => {
 							setRegistrationItem('not-done'), setRegistrationPage('not-done');
 						}}
@@ -47,9 +41,7 @@ const Registration = () => {
 
 					{/* Tabs Item */}
 					<li
-						className={`tabs__item ${
-							curRegistrationItem === 'not-done' ? 'active' : null
-						}`}
+						className={`tabs__item ${curRegistrationItem === 'not-done' ? 'active' : null}`}
 						onClick={() => {
 							setRegistrationItem('not-done'), setRegistrationPage('not-done');
 						}}

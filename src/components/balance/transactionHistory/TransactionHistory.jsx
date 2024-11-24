@@ -8,6 +8,7 @@ import {
 import TransactionHistoryItem from '../transactionHistoryItem/TransactionHistoryItem';
 
 const TransactionHistory = () => {
+	// данные транзакций
 	const transactionHistoryData = [
 		{
 			key: 1,

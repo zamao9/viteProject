@@ -10,7 +10,7 @@ const Popup = ({ curPopup, setPopup }) => {
 		hidden: { opacity: 0 }, // Начальное состояние (скрыто)
 		visible: { opacity: 1 }, // Конечное состояние (видимо)
 	};
-	const [active, setActive] = useState(true);
+	const [active, setActive] = useState(true); // активировать попап или нет
 
 	return (
 		<AnimatePresence>

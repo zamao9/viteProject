@@ -4,13 +4,15 @@ import {
 	GameAccountsIcon,
 	ChatIcon,
 	TasksIcon,
+	ShopIcon,
 } from '/src/constants/svgImages';
 
 const footerItems = [
 	{ id: 'registration', icon: <RegistrationIcon />, key: 'Registration' },
+	{ id: 'shop', icon: <ShopIcon />, key: 'Shop' },
 	{ id: 'game-accounts', icon: <GameAccountsIcon />, key: 'Game Accounts' },
 	{ id: 'tasks', icon: <TasksIcon />, key: 'Tasks' },
-	{ id: 'not-done', icon: <ChatIcon />, key: 'Another Not Done' },
+	{ id: 'not-done', icon: <ChatIcon />, key: 'Not Done' },
 ];
 
 const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
@@ -22,9 +24,7 @@ const Footer = ({ setFooterPage, curFooterItem, setFooterItem }) => {
 					{footerItems.map((item) => (
 						<li
 							key={item.key}
-							className={`footer__item ${
-								curFooterItem === item.id ? 'active' : ''
-							}`}
+							className={`footer__item ${curFooterItem === item.id ? 'active' : ''}`}
 							onClick={() => {
 								setFooterItem(item.id);
 								setFooterPage(item.id);

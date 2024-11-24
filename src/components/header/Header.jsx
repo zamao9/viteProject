@@ -7,7 +7,8 @@ import { PlusIcon } from '/src/constants/svgImages';
 import { NotificationIcon, LogoIcon } from '/src/constants/svgImages';
 
 const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
-	const AccountImage = useAppSelector(selectProfileImg);
+	const AccountImage = useAppSelector(selectProfileImg); // аватар в профиль
+	// элементы
 	const headerItems = [
 		{
 			key: 'balance',
@@ -60,9 +61,7 @@ const Header = ({ setHeaderPage, curHeaderItem, setHeaderItem }) => {
 					{headerItems.map(({ key, iconDiv }) => (
 						<li
 							key={key}
-							className={`header__item ${
-								curHeaderItem === key ? 'active' : ''
-							}`}
+							className={`header__item ${curHeaderItem === key ? 'active' : ''}`}
 							onClick={() => {
 								setHeaderPage(key);
 								setHeaderItem(key);

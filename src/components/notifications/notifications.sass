@@ -25,11 +25,10 @@
 			fill: vars.$c-text
 		.notification-settings
 			transform-origin: center
-			transition: 0.2s ease
 		&.active
+			.notification-settings-bg
+				fill: vars.$c-text-hover
 			.notification-settings
-				transform: rotate(90deg)
-				-webkit-transform: rotate(90deg)
 				fill: vars.$c-text-hover
 
 	.checkbox

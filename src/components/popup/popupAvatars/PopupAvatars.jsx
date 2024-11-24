@@ -9,6 +9,7 @@ import './popupAvatars.sass';
 
 const PopupAvatars = ({ setPopup }) => {
 	const dispatch = useAppDispatch();
+	// аватары для профиля
 	const avatars = [
 		{ img: Avatar1, key: 1 },
 		{ img: Avatar2, key: 2 },
@@ -25,9 +26,7 @@ const PopupAvatars = ({ setPopup }) => {
 			<ul className='popup-list'>
 				{avatars.map((avatar) => (
 					<li
-						className={`popup-list__item ${
-							selectedAvatar === avatar.img ? 'selected' : ''
-						}`}
+						className={`popup-list__item ${selectedAvatar === avatar.img ? 'selected' : ''}`}
 						onClick={() => setSelectedAvatar(avatar.img)}
 						key={avatar.key}
 					>

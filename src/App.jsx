@@ -14,6 +14,7 @@ import Tasks from './components/tasks/Tasks';
 import { TonConnectButton } from '@tonconnect/ui-react';
 import Balance from './components/balance/Balance';
 import Notifications from './components/notifications/Notifications';
+import Shop from './components/shop/Shop';
 
 function App() {
 	const [curPage, setPage] = useState('registration');
@@ -26,11 +27,7 @@ function App() {
 			{curPopup === true && <Popup curPopup={curPopup} setPopup={setPopup} />}
 
 			{/* Header */}
-			<Header
-				setHeaderPage={setPage}
-				curHeaderItem={curItemActive}
-				setHeaderItem={setItemActive}
-			/>
+			<Header setHeaderPage={setPage} curHeaderItem={curItemActive} setHeaderItem={setItemActive} />
 
 			<main className='section main'>
 				<div className='container main__container'>
@@ -49,6 +46,9 @@ function App() {
 					{/* Registration set in Footer Component */}
 					{curPage === 'registration' && <Registration />}
 
+					{/* Shop set in Footer Component */}
+					{curPage === 'shop' && <Shop />}
+
 					{/* Not Done set in Footer Component */}
 					{curPage === 'not-done' && <NotDone />}
 
@@ -63,11 +63,7 @@ function App() {
 				</div>
 			</main>
 
-			<Footer
-				setFooterPage={setPage}
-				curFooterItem={curItemActive}
-				setFooterItem={setItemActive}
-			/>
+			<Footer setFooterPage={setPage} curFooterItem={curItemActive} setFooterItem={setItemActive} />
 		</>
 	);
 }
